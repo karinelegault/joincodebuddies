@@ -7,9 +7,9 @@ puts " Now deleting all Users..."
 Request.delete_all
 Project.delete_all
 User.delete_all
-# Request.reset_pk_sequence
-# Project.reset_pk_sequence
-# User.reset_pk_sequence
+Request.reset_pk_sequence
+Project.reset_pk_sequence
+User.reset_pk_sequence
 
 puts "Creating Gad, Karine and Pascal"
 
