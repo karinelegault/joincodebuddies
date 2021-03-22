@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
     def index
-      @projects = Project.all
+        if params[:query].present?
+            @projects = Project.search(params[:query])
+        else
+            @projects = Project.all
+        end
     end
 
     def show
