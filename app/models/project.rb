@@ -3,6 +3,6 @@ class Project < ApplicationRecord
   has_many :requests
   has_many :users
 
-  searchkick
+  searchkick 
 
 end
