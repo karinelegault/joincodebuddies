@@ -12,6 +12,7 @@
   </head>
 
   <body>
-<%= render 'partials/navbar' %>    <%= yield %>
+  <%# Gad instead of partials/navbar, I'm rendering shared. If you're making mods to the navbar please do so to shared navabar %>
+<%= render 'shared/navbar' %>    <%= yield %>
   </body>
 </html>
