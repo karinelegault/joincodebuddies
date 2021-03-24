@@ -1,0 +1,10 @@
+<% @requests.each do |request| %>
+    <div>
+        <h3>You've received a request for: <%= request.project.name %></h3>
+        <h3>User who requested: <%= request.user.email %></h3>
+        <h3><%= request.status %></h3>
+        <%# <%= link_to "accept request", accept_requests_path  %>
+        <%# <%= link_to "deny request", deny_requests_path  %> 
+        <p>****************************************</p>
+    </div>
+<% end %>
