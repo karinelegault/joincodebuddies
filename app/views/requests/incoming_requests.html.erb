@@ -4,7 +4,8 @@
         <h3>User who requested: <%= request.user.email %></h3>
         <h3><%= request.status %></h3>
         <%# <%= link_to "accept request", accept_requests_path  %>
-        <%# <%= link_to "deny request", deny_requests_path  %> 
+        <%= link_to "deny request", deny_requests_path(request), method: :patch %>
+        <%= link_to "accept request", accept_requests_path(request), method: :patch %>
         <p>****************************************</p>
     </div>
 <% end %>

@@ -31,15 +31,15 @@ puts "... Pascal created!"
 puts "Creating Projects"
 
 # file1 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615303525/call-me-fred-6KZcjJoaqNI-unsplash_d7ewhm.jpg')
-project1 = Project.create!(user_id: "#{rand(1..3)}", name: "Miss Sunshine", description: "Bacon ipsum dolor amet biltong pork chop bresaola sausage ball tip alcatra bacon spare ribs strip steak. Hamburger boudin capicola, shoulder bresaola flank pastrami.", chatroom_link: "www.google.com" )
+project1 = Project.create!(user_id: "#{rand(1..3)}", name: "Miss Sunshine", description: "Bacon ipsum dolor amet biltong pork chop bresaola sausage ball tip alcatra bacon spare ribs strip steak. Hamburger boudin capicola, shoulder bresaola flank pastrami.", chatroom_link: "www.google.com", teammates: [2,3] )
 # project1.photo.attach(io: file1, filename: 'nes.jpg', content_type: 'image/jpg')
 
 # file2 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615305428/ji9smwacxk4bs8jdh48s3do06a40.jpg')
-project2 = Project.create!(user_id: "#{rand(1..3)}", name: "Pups", description: "Pork belly buffalo chislic, boudin brisket meatloaf shank turkey pork capicola landjaeger biltong andouille tri-tip. Swine t-bone sirloin meatloaf kevin venison. Salami drumstick burgdoggen turducken bresaola boudin, turkey biltong jowl swine.", chatroom_link: "www.google.com" )
+project2 = Project.create!(user_id: "#{rand(1..3)}", name: "Pups", description: "Pork belly buffalo chislic, boudin brisket meatloaf shank turkey pork capicola landjaeger biltong andouille tri-tip. Swine t-bone sirloin meatloaf kevin venison. Salami drumstick burgdoggen turducken bresaola boudin, turkey biltong jowl swine.", chatroom_link: "www.google.com", teammates: [2,3] )
 # project2.photo.attach(io: file13, filename: 'nes.jpg', content_type: 'image/jpg')
 
 # file3 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615649521/Screen_Shot_2021-03-13_at_10.31.30_AM_gwcnay.png')
-project3 = Project.create!(user_id: "#{rand(1..3)}", name: "Build IT", description: "Chislic jowl cow bresaola, pork burgdoggen sausage pastrami short ribs turducken ball tip shank. Salami turkey flank landjaeger filet mignon bacon ball tip chicken.", chatroom_link: "www.google.com" )
+project3 = Project.create!(user_id: "#{rand(1..3)}", name: "Build IT", description: "Chislic jowl cow bresaola, pork burgdoggen sausage pastrami short ribs turducken ball tip shank. Salami turkey flank landjaeger filet mignon bacon ball tip chicken.", chatroom_link: "www.google.com", teammates: [1,2] )
 # project3.photo.attach(io: file2, filename: 'nes.jpg', content_type: 'image/png')
 
 puts "Projects Created"

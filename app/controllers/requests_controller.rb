@@ -23,11 +23,16 @@ class RequestsController < ApplicationController
     end
   
     def accept_requests
+        @request = Request.find(params[:id])
         @request.status = "accepted"
-        
+        @project = Project.find(@request.project_id)
+        @user = User.find(@request.user_id)
+        @project.teammates << @user.id
+        @project.save
     end
 
     def deny_requests
+        @request = Request.find(params[:id])
         @request.status = "denied"
     end
     private
