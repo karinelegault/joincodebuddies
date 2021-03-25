@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     patch ":id/deny_requests",  to: "requests#deny_requests", as: "deny_requests"
     patch ":id/accept_requests",  to: "requests#accept_requests", as: "accept_requests"
   # patch "accept_requests", to: "requests#accept_requests", as: "accept_requests"
+  # patch "deny_requests",  to: "requests#deny_requests", as: "deny_requests"
+  resources :users
 end
