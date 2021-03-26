@@ -3,4 +3,5 @@
     <%= link_to "Request to Join", project_join_request_path(@project)  %>
 <p><%= @project.description %></p>
 <%= link_to "Back to projects", root_path, class: "btn-gradient"  %>
+<%= link_to "Go to Chatroom", project_chatroom[@project, @chatroom]  %>
 </div>
