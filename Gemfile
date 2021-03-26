@@ -30,6 +30,7 @@ gem 'pg_search', '~> 2.3.0'
 # gem 'searchkick', '~> 4.0'
 gem 'geocoder'
 
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 # gem 'image_processing', '~> 1.2'
 
