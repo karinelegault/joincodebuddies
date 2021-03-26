@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
     def index
       # raise
         if params[:q].present?
-            @projects = Project.search(params[:q])
+        
+            @projects = Project.search_by_name(params[:q])
             # raise
         else
             @projects = Project.all
