@@ -3,15 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :projects
-  has_many :user_skills
+  has_many :projects, dependent: :destroy
+  has_many :user_skills, dependent: :destroy
   has_many :skills, through: :user_skills 
   #possible problem on line 10
   has_many :projects, through: :requests
-  has_many :requests
-  has_many :chatroom 
-  has_many :chatroom, through: :requests
-  has_many :messages
+  has_many :requests, dependent: :destroy
+  has_many :chatroom, dependent: :destroy
+  has_many :chatroom, through: :requests, dependent: :destroy
+  has_many :messages, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
