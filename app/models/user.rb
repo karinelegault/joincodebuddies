@@ -9,6 +9,9 @@ class User < ApplicationRecord
   #possible problem on line 10
   has_many :projects, through: :requests
   has_many :requests
+  has_many :chatroom 
+  has_many :chatroom, through: :requests
+  has_many :messages
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
