@@ -13,5 +13,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   geocoded_by :city
-  after_validation :geocode, if: :will_save_change_to_city?      
+  after_validation :geocode, if: :will_save_change_to_city?
+
+  include PgSearch::Model
+  pg_search_scope :search_by_username,
+    against: [ :email ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
 end
