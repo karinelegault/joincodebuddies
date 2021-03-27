@@ -30,6 +30,30 @@ puts "... Pascal created!"
 
 puts "Creating Projects"
 
+puts "Creating skills for each users"
+
+skills_name = ['Ruby', 'Javascript', 'Python', 'React']
+
+skills_name.each do |name|
+  Skill.create(
+    name: name
+  )
+  puts "created #{name}"
+end
+
+"puts skill has been created"
+"Creating projects"
+
+users = User.all
+users.each do |user|
+  UserSkill.create!(
+    skill: Skill.all.sample, 
+    user: user
+  )
+end
+
+
+
 # file1 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615303525/call-me-fred-6KZcjJoaqNI-unsplash_d7ewhm.jpg')
 project1 = Project.create!(user_id: "#{rand(1..3)}", name: "Miss Sunshine", description: "Bacon ipsum dolor amet biltong pork chop bresaola sausage ball tip alcatra bacon spare ribs strip steak. Hamburger boudin capicola, shoulder bresaola flank pastrami.", chatroom_link: "www.google.com", teammates: [2,3] )
 # project1.photo.attach(io: file1, filename: 'nes.jpg', content_type: 'image/jpg')

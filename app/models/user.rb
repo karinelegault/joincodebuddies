@@ -4,6 +4,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :projects
+  has_many :user_skills
+  has_many :skills, through: :user_skills 
   #possible problem on line 10
   has_many :projects, through: :requests
   has_many :requests
