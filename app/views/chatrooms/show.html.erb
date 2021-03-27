@@ -1,4 +1,4 @@
-
+<div class="container">
 <h1><%= @chatroom.name %></h1>
 <h1>Owner: <%= @chatroom.user.email %></h1>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
@@ -18,3 +18,4 @@
     <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
     <%= f.submit %>
   <% end %>
+</div>
