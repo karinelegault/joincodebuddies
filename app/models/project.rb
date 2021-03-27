@@ -3,7 +3,6 @@ class Project < ApplicationRecord
   has_many :requests
   has_many :users
   has_one :chatroom
-  searchkick 
 
   include PgSearch::Model
   pg_search_scope :search_by_name,
