@@ -13,15 +13,15 @@ class RequestsController < ApplicationController
     end
 
     def outgoing_requests
-       @requests = Request.where(user_id: current_user.id) 
+       @requests = Request.where(user_id: current_user.id)
     end
 
     def incoming_requests
-        @projects = Project.where(user_id: current_user.id) 
+        @projects = Project.where(user_id: current_user.id)
         my_requests = @projects.map { |project| project.requests}
         @requests = my_requests.flatten
     end
-  
+
     def accept_requests
         @request = Request.find(params[:id])
         @request.status = "accepted"
@@ -35,6 +35,10 @@ class RequestsController < ApplicationController
         @request = Request.find(params[:id])
         @request.status = "denied"
     end
+
+    def components
+    end
+
     private
 
     def booking_params
