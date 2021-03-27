@@ -7,11 +7,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-<form id="form"> 
-  <input type="search" id="query" name="q" placeholder="Search...">
-  <button>Search</button>
-</form>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -22,7 +17,7 @@
           <%= link_to "Projects", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Community", "#", class: "nav-link" %>
+          <%= link_to "Community", users_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "How it works", "#", class: "nav-link" %>

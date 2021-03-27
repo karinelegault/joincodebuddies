@@ -14,21 +14,45 @@ User.reset_pk_sequence
 puts "Creating Gad, Karine and Pascal"
 
 # filegad = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339200/jeff-tumale-5sYQ1uD4pHU-unsplash_sl7jog.jpg')
-gad = User.create!(email: "gad@email.com", password: "123456")
+gad = User.create!(name: "gad", email: "gad@email.com", password: "123456", city: "Montreal")
 # gad.avatar.attach(io: filegad, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Gad created!"
 
 # filekarine = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339310/sarah-rodriguez-k4TE7Z-nK8M-unsplash_drs8cw.jpg')
-karine = User.create!(email: "karine@email.com", password: "123456")
+karine = User.create!(name: "karine", email: "karine@email.com", password: "123456", city: "Toronto")
 # karine.avatar.attach(io: filekarine, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Karine created!"
 
 # filepascal = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339186/elizeu-dias-2EGNqazbAMk-unsplash_h5tkk1.jpg')
-pascal = User.create!(email: "pascal@email.com", password: "123456")
+pascal = User.create!(name: "pascal", email: "pascal@email.com", password: "123456", city: "Ottawa")
 # pascal.avatar.attach(io: filepascal, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Pascal created!"
 
 puts "Creating Projects"
+
+puts "Creating skills for each users"
+
+skills_name = ['Ruby', 'Javascript', 'Python', 'React']
+
+skills_name.each do |name|
+  Skill.create(
+    name: name
+  )
+  puts "created #{name}"
+end
+
+"puts skill has been created"
+"Creating projects"
+
+users = User.all
+users.each do |user|
+  UserSkill.create!(
+    skill: Skill.all.sample, 
+    user: user
+  )
+end
+
+
 
 # file1 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615303525/call-me-fred-6KZcjJoaqNI-unsplash_d7ewhm.jpg')
 project1 = Project.create!(user_id: "#{rand(1..3)}", name: "Miss Sunshine", description: "Bacon ipsum dolor amet biltong pork chop bresaola sausage ball tip alcatra bacon spare ribs strip steak. Hamburger boudin capicola, shoulder bresaola flank pastrami.", chatroom_link: "www.google.com", teammates: [2,3] )
