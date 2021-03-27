@@ -1,5 +1,9 @@
 <div class="container">
-<h1>this works?</h1>
+<form id="form"> 
+  <input type="search" id="query" name="q" placeholder="Search...">
+  <button>Search</button>
+</form>
+<h1>List of projects</h1>
 <% @projects.each do |project| %>
 <h2> <%= project.name %> </h2>
 <p> <%= project.description %> </p>
