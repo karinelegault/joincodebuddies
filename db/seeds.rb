@@ -64,6 +64,11 @@ project2 = Project.create!(user_id: "#{rand(1..3)}", name: "Pups", description: 
 
 # file3 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615649521/Screen_Shot_2021-03-13_at_10.31.30_AM_gwcnay.png')
 project3 = Project.create!(user_id: "#{rand(1..3)}", name: "Build IT", description: "Chislic jowl cow bresaola, pork burgdoggen sausage pastrami short ribs turducken ball tip shank. Salami turkey flank landjaeger filet mignon bacon ball tip chicken.", chatroom_link: "www.google.com", teammates: [1,2] )
+
 # project3.photo.attach(io: file2, filename: 'nes.jpg', content_type: 'image/png')
+
+puts "create chatrooms"
+
+chatroom = Chatroom.create!(user_id: 1, project_id: 1, name: "mychatroom")
 
 puts "Projects Created"
