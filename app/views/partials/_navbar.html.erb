@@ -8,35 +8,35 @@
         <ul class="navbar-nav3">
           <div class="nav-content">
           <% if user_signed_in? %>
-            <li class="nav-item h1-mobile-font">
+            <li class="nav-item h1-mobile">
               <%= link_to "Projects", projects_path, class: "nav-link" %>
             </li>
-            <li class="nav-item h1-mobile-font">
+            <li class="nav-item h1-mobile">
               <%= link_to "Community", users_path, class: "nav-link" %>
             </li>
-            <li class="nav-item h1-mobile-font nav-special">
+            <li class="nav-item h1-mobile nav-special">
               <%= link_to "How it works", "#", class: "nav-link" %>
             </li>
 
-            <li class="nav-item dropdown h1-mobile-font">
+            <li class="nav-item dropdown h1-mobile">
               <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "nav-avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-right h1-mobile-font" aria-labelledby="navbarDropdown h1-mobile-font">
-                <%= link_to "My profile", "#", class: "dropdown-item h1-mobile-font" %>
-                <%= link_to "My Dashboard", "#", class: "dropdown-item h1-mobile-font" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item h1-mobile-font" %>
+              <div class="dropdown-menu dropdown-menu-right h1-mobile" aria-labelledby="navbarDropdown h1-mobile">
+                <%= link_to "My profile", "#", class: "dropdown-item h1-mobile" %>
+                <%= link_to "My Dashboard", "#", class: "dropdown-item h1-mobile" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item h1-mobile" %>
               </div>
             </li>
 
 
 
           <% else %>
-            <li class="nav-item h1-mobile-font">
+            <li class="nav-item h1-mobile">
               <%= link_to "Projects", projects_path, class: "nav-link" %>
             </li>
-            <li class="nav-item h1-mobile-font">
+            <li class="nav-item h1-mobile">
               <%= link_to "Community", users_path, class: "nav-link" %>
             </li>
-            <li class="nav-item h1-mobile-font nav-special">
+            <li class="nav-item h1-mobile nav-special">
               <%= link_to "How it works", "#", class: "nav-link" %>
             </li>
 
