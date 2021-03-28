@@ -1,23 +1,75 @@
 .sign-up {
-
+  width: 100px;
+  height: 40px;
+  color: $white;
+  background-color: $lightgreen;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .log-in {
-
+  width: 100px;
+  height: 40px;
+  color: $lightgreen;
+  background-color: $white;
+  border: solid 1px;
+  border-color: $lightgreen;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .create-project {
-
+  width: 130px;
+  height: 40px;
+  color: $white;
+  background-color: $darkgreen;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .details {
-
+  width: 100px;
+  height: 40px;
+  color: $darkgreen;
+  background-color: $white;
+  border: solid 1px;
+  border-color: $darkgreen;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .join {
-
+  width: 80px;
+  height: 30px;
+  color: $white;
+  background-color: $darkgreen;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .room {
-
+  width: 80px;
+  height: 30px;
+  color: $white;
+  background-color: $almostblack;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
