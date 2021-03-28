@@ -1,33 +1,54 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href="#">
-  <%= image_tag("joincodebuddies.png", height: "50", width: "120") %>
-    <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" /> %>
-</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-<form id="form"> 
-  <input type="search" id="query" name="q" placeholder="Search...">
-  <button>Search</button>
-</form>
-
-  <%# Search Bar %>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
-      </li>
-      <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-        </div>
-      </li>
-    </ul>
+  <div class="nav-logo">
+    <%= link_to "Home", class: "navbar-brand" do %>
+      <%= image_tag "joincodebuddies.png" %>
+      <% end %>
   </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav3">
+          <div class="nav-content">
+          <% if user_signed_in? %>
+            <li class="nav-item h1-mobile-font">
+              <%= link_to "Projects", projects_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item h1-mobile-font">
+              <%= link_to "Community", users_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item h1-mobile-font nav-special">
+              <%= link_to "How it works", "#", class: "nav-link" %>
+            </li>
+
+            <li class="nav-item dropdown h1-mobile-font">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "nav-avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right h1-mobile-font" aria-labelledby="navbarDropdown h1-mobile-font">
+                <%= link_to "My profile", "#", class: "dropdown-item h1-mobile-font" %>
+                <%= link_to "My Dashboard", "#", class: "dropdown-item h1-mobile-font" %>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item h1-mobile-font" %>
+              </div>
+            </li>
+
+
+
+          <% else %>
+            <li class="nav-item h1-mobile-font">
+              <%= link_to "Projects", projects_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item h1-mobile-font">
+              <%= link_to "Community", users_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item h1-mobile-font nav-special">
+              <%= link_to "How it works", "#", class: "nav-link" %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "log-in" %>
+            </li>
+             <li class="nav-item">
+              <%= link_to "Sign up", "#", class: "sign-up" %>
+            </li>
+          </div>
+          <% end %>
+        </ul>
+      </div>
 </div>
+
