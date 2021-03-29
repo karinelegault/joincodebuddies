@@ -6,7 +6,8 @@
 .avatar {
   width: 100px;
   border-radius: 50%;
-  filter: drop-shadow(0 0 0.75rem $almostblack);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.295)
+  // filter: drop-shadow(0 0 0.3rem $almostblack);
 }
 .avatar-all {
   text-align: center;
