@@ -14,44 +14,44 @@ $montserrat: "Montserrat";
 $inter: "Inter";
 
 .h1-font {
-  font-size: 72;
-  font-family: "Montserrat";
+  font-size: 64px;
+  font-family: $montserrat;
 }
 
 .h2-font {
-  font-size: 36;
-  font-family: "Montserrat";
+  font-size: 30px;
+  font-family: $montserrat;
 }
 
 .h3-font {
-  font-size: 24;
-  font-family: "Montserrat";
+  font-size: 20px;
+  font-family: $montserrat;
 }
 
 .p-font {
-  font-size: 24;
-  font-family: "Inter";
+  font-size: 16px;
+  font-family: $inter;
   font-weight: lighter;
 }
 
 .h1-mobile {
-  font-size: 20;
-  font-family: "Montserrat";
+  font-size: 16px;
+  font-family: $montserrat;
 }
 
 .h2-mobile {
-  font-size: 16;
-  font-family: "Montserrat";
+  font-size: 14px;
+  font-family: $montserrat;
 }
 
 .h3-mobile {
-  font-size: 14;
-  font-family: "Montserrat";
+  font-size: 12px;
+  font-family: $montserrat;
 }
 
 .p-mobile {
-  font-size: 12;
-  font-family: "Inter";
+  font-size: 10px;
+  font-family: $inter;
   font-weight: lighter;
 }
 
