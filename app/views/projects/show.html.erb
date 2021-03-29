@@ -4,5 +4,5 @@
 <p><%= @project.description %></p>
 <% @chatroom = @project.chatroom %>
 <%= link_to "Back to projects", root_path, class: "btn-gradient"  %>
-<%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom)  %>
+<%= link_to_if(@project.teammates.include? current_user.id) "Go to Chatroom", project_chatroom_path(@project, @chatroom)  %>
 </div>
