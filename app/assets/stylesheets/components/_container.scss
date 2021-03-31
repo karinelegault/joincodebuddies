@@ -8,3 +8,70 @@
 //     bottom: 0;
 //     width: 100%;
 // }
+.container-user-info {
+  border-radius: 25px;
+  padding: 10px 15px;
+  max-width: 300px!important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 1, 0.103)
+}
+
+.user-info {
+  box-shadow: 0px 0px 10px rgba(0, 0, 1, 0.089);
+  border-radius: 20px;
+
+}
+
+.user-info h2 {
+  font-size: 26px;
+  line-height: 1;
+  font-family: $montserrat;
+}
+
+.user-info p {
+  color: $almostblack;
+  font-family: $inter;
+  font-weight: 200;
+}
+
+.container-user-info img {
+  margin: 10px ;
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;;
+}
+
+.user-stack h3 {
+  font-size: 20px;
+  font-family: $montserrat;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 150px;
+  margin: 0 auto;
+  font-weight: lighter;
+  color: $mediumgray;
+}
+
+.icons {
+  justify-content: space-around;
+}
+
+.location {
+  background-color: $lighterlightgray;
+  color: $almostblack;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.projects-user {
+  margin: 15px auto;
+  justify-content: center;
+}
+
+hr {
+  width: 100px;
+}
