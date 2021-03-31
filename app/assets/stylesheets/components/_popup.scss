@@ -1,0 +1,36 @@
+.container-pop {
+  width: 175px;
+  background-color: $darkgreen;
+  color: white;
+  text-align: center;
+  height: auto;
+  border-radius: 10px;
+  font-family: $inter;
+  position: relative;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.342);
+}
+
+.container-pop h2 {
+  font-weight: normal;
+  font-family: $montserrat;
+
+}
+
+.container-pop p {
+  font-size: 10px;
+  font-family: $inter;
+  font-weight: lighter;
+  text-align: justify;
+
+}
+
+.text {
+  padding: 20px;
+}
+
+.fas {
+  // position: absolute;
+  left: 90px;
+  font-size: 20px;
+
+}
