@@ -1,8 +1,10 @@
+<% if !@requests.nil? %>
 <% @requests.each do | request| %>
     <div>
         <p> Your request for  <%= request.project.name %></p>
-        <p> is currently:</p>  <%= request.status %>
+        <p> is currently:  <%= request.status %> </p>
     </div>
     <p>****************************************</p>
+<% end %>
 <% end %>
 <%= link_to "Home Page", root_path%>

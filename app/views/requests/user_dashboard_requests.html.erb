@@ -1,0 +1,29 @@
+<%= link_to "Outgoing Requests", outgoing_requests_path %>
+<%= link_to "Incoming Requests", incoming_requests_path %>
+
+<% if !@incoming_requests.nil? %>
+<% @incoming_requests.each do |request| %>
+    <div>
+        <h3>You've received a request for: <%= request.project.name %></h3>
+        <h3>User who requested: <%= request.user.email %></h3>
+        <h3><%= request.status %></h3>
+        <%# <%= link_to "accept request", accept_requests_path  %>
+        <%= link_to "deny request", deny_requests_path(request), method: :patch %>
+        <%= link_to "accept request", accept_requests_path(request), method: :patch %>
+        <p>****************************************</p>
+    </div>
+<% end %>
+<% end %>
+
+<% if !@outgoing_requests.nil? %>
+<% @outgoing_requests.each do | request| %>
+    <div>
+        <p> Your request for  <%= request.project.name %></p>
+        <p> is currently:  <%= request.status %> </p>
+    </div>
+    <p>****************************************</p>
+<% end %>
+<% end %>
+<%= link_to "Home Page", root_path%>
+
+
