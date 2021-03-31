@@ -7,7 +7,7 @@ class RequestsController < ApplicationController
         @request.user_id = current_user.id
         @request.status = "pending"
         if @request.save!
-            flash.now[:notice] = "Your request was sent successfully!"
+          flash.now[:notice] = "Your request was sent successfully!"
         end
         # render "project/show"
     end
@@ -17,9 +17,9 @@ class RequestsController < ApplicationController
     end
 
     def incoming_requests
-        @projects = Project.where(user_id: current_user.id)
-        my_requests = @projects.map { |project| project.requests}
-        @requests = my_requests.flatten
+      projects = Project.where(user_id: current_user.id)
+      my_requests = projects.map { |project| project.requests }
+      @requests = my_requests.flatten
     end
 
     def accept_requests
@@ -39,9 +39,16 @@ class RequestsController < ApplicationController
     def components
     end
 
+    def user_dashboard_requests
+      projects = Project.where(user_id: current_user.id)
+      my_requests = projects.map { |project| project.requests }
+      @incoming_requests = my_requests.flatten
+      @outgoing_requests = Request.where(user_id: current_user.id)
+    end
+
     private
 
-    def booking_params
+    def request_params
         params.require(:request).permit(:project_id, :user_id, :status)
-      end
+    end
 end
