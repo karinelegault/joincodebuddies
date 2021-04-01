@@ -8,12 +8,13 @@
   font-family: $inter;
   position: relative;
   box-shadow: 0 0 13px rgba(0, 0, 0, 0.342);
+  position: relative;
+  padding-top: 15px;
 }
 
 .container-pop h2 {
   font-weight: normal;
   font-family: $montserrat;
-
 }
 
 .container-pop p {
@@ -21,7 +22,15 @@
   font-family: $inter;
   font-weight: lighter;
   text-align: justify;
+  // position:relative;
 
+}
+
+.check-icon {
+  margin: auto;
+  position: absolute;
+  left: 64px;
+  bottom: 176px;
 }
 
 .text {
@@ -32,5 +41,4 @@
   // position: absolute;
   left: 90px;
   font-size: 20px;
-
 }
