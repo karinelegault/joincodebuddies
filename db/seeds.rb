@@ -72,5 +72,7 @@ project3 = Project.create!(user_id: "#{rand(1..3)}", name: "Build IT", descripti
 puts "create chatrooms"
 
 chatroom = Chatroom.create!(user_id: 1, project_id: 1, name: "mychatroom")
+chatroom = Chatroom.create!(user_id: 2, project_id: 2, name: "mychatroom")
+chatroom = Chatroom.create!(user_id: 3, project_id: 3, name: "mychatroom")
 
 puts "Projects Created"
