@@ -30,3 +30,23 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 // SEARCH BAR END *******
+
+
+.form-container {
+  width: 30%;
+  height: auto;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.123);
+}
+
+.form-control {
+  border: 1px solid #f4f4f4;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.123);
+}
+
+.sign-up-form-btn {
+  display: flex;
+  justify-content: center;
+}
