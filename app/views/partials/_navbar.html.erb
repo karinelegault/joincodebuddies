@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="nav-logo">
-    <%= link_to "Home", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "joincodebuddies.png" %>
       <% end %>
   </div>
@@ -9,7 +9,7 @@
           <div class="nav-content">
           <% if user_signed_in? %>
             <li class="nav-item h1-mobile">
-              <%= link_to "Projects", root_path  %>
+              <%= link_to "Projects", projects_path  %>
             </li>
             <li class="nav-item h1-mobile">
               <%= link_to "Community", users_path, class: "nav-link" %>
