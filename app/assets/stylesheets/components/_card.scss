@@ -1,4 +1,6 @@
   .card {
+    position: relative;
+
       display: grid; 
       margin-bottom: 20px;
       line-height: 1.42857143;
@@ -12,7 +14,7 @@
   }
   .img-card {
     width: 100%;
-    height:200px;
+    height:250;
     border-top-left-radius:2px;
     border-top-right-radius:2px;
     display:block;
@@ -22,7 +24,7 @@
     position: relative;
     border-radius: 20px 20px 0 0;
     width: 100%;
-    height: 200px;
+    height: 250;
     object-fit:cover; 
     transition: all .25s ease;
   } 
@@ -30,6 +32,21 @@
     padding:15px;
     text-align:left;
   }
+
+  .card-content h2 {
+    font-family: $montserrat;
+    color: $almostblack;
+  }
+
+  .card-content p {
+    font-family: $inter;
+    color: $almostblack
+  }
+
+ #card-img {
+   height: 270px;
+ }
+
   .card-title {
     margin-top:0px;
     font-weight: 700;
@@ -86,6 +103,14 @@
     height: 30px;
 }
 
+#fas {
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  left: 289px;
+  color: white;
+  font-size: 40px;
+}
 
   // @media only screen and (max-width: 600px) {
   //   .card-detail {
