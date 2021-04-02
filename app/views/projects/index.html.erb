@@ -1,9 +1,37 @@
+<div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url(https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
+  <div class="container">
+    <h1>Build your ideas</h1>
+    <p>See what our teams made</p>
+    <%# <a class="btn btn-flat" href="#">Apply now</a> %>
+  </div>
+</div>
+<hr>
+
+<div class="container text-center">
+  <div class="container-project">
+    <div class="text-project">
+      <h3>See all the new ideas to join</h3>
+      <p>Many of us have amazing ideas and we are looking for the perfect team to build it.</p>
+      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input
+          name="utf8" type="hidden" value="&#x2713;" />
+          <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i>
+        </button>
+        </div>
+      </form>
+    </div>
+</div>
+
+</div>
+
 <div class="container">
-<form id="form"> 
+<%# <form id="form"> 
   <input type="search" id="query" name="q" placeholder="Search...">
   <button>Search</button>
-</form>
-<h1>List of projects</h1>
+</form> %>
+<%# <h1>List of projects</h1> %>
 <% @projects.each do |project| %>
 <h2> <%= project.name %> </h2>
 <p> <%= project.description %> </p>
