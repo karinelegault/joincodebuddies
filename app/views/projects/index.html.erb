@@ -1,52 +1,137 @@
-<div class="container">
-<form id="form"> 
-  <input type="search" id="query" name="q" placeholder="Search...">
-  <button>Search</button>
-</form>
-<h1>List of projects</h1>
-<% @projects.each do |project| %>
-<h2> <%= project.name %> </h2>
-<p> <%= project.description %> </p>
-<%= link_to "Details", project_path(project)  %>
+<div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url(https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
+  <div class="container">
+    <h1>Build your ideas</h1>
+    <p>See what our teams made</p>
+    <%# <a class="btn btn-flat" href="#">Apply now</a> %>
+  </div>
+</div>
+<hr>
 
-<% end %>
-<p>**************************************</p>
+<div class="container text-center">
+  <div class="container-project">
+    <div class="text-project">
+      <h3 class="h3-font">See all the new ideas to join</h3>
+      <p class="p-font">Many of us have amazing ideas and we are looking for the perfect team to build it.</p>
+      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input
+          name="utf8" type="hidden" value="&#x2713;" />
+          <div class="search-form-control form-group mb-5">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i>
+        </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container project-container bg-white p-5">
+  <div class="cards">
+    <% @projects.each do |project| %>
+    <div class="">
+      <div class="">
+        <div class="card">
+          <a class="img-card" href="">
+            <img
+              src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
+          </a>
+          <a href="">
+            <div class="p-font join"><%= link_to "Join", project_path(project)  %>
+            </div>
+          </a>
+
+          <div class="card-content text-center p-3">
+            <h2 class="card-title">
+              <a href="">
+                <%= project.name %>
+              </a>
+            </h2>
+            <p class=""><%= project.description %> </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <% end %>
 <%= link_to "Create New Project", new_project_path %>
 <%= link_to "Outgoing Requests", outgoing_requests_path %>
 <%= link_to "Incoming Requests", incoming_requests_path %>
 
+  </div>
 </div>
 
-<%# CARDS TO JOIN PROJECT %>
-<div class="wrapper">
-<div class="container">
-  <div class="row d-flex">
-    <div class="col-xs-12 col-sm-4">
-    <% @projects.each do |project| %>
-      <div class="card">
-        <a class="img-card" href="">
-          <img src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
-        </a>
-        <a href="">
-          <div class="p-font join">Join</div>
-        </a>
-        <div class="card-content">
-          <h3 class="card-title">
-            <a href="">
-          <%= project.name %>
-            </a>
-          </h3>
-          <p> <%= project.description %> </p>
+<hr>
+
+<div class="container text-center">
+  <div class="container-project">
+    <div class="text-project">
+      <h3 class="h3-font">See the final results</h3>
+      <p class="p-font">Our members join a team, started working and created their dream product.</p>
+      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input
+          name="utf8" type="hidden" value="&#x2713;" />
+          <div class="search-form-control form-group mb-5">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i>
+        </button>
         </div>
-        <div class="card-read-more">
-          <div class="card-footer-bottom d-flex justify-content-between py-2 px-2">
-            <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-            <p>Created 3 days ago</p>
-          </div>
-        </div>
-      </div>
-     <% end %>
+      </form>
     </div>
   </div>
 </div>
+
+<div class="container project-container bg-white p-4 mb-4">
+  <div class="row">
+    <div class="col-4">
+      <div class="card project-finish">
+        <a class="img-card" href="">
+          <i id="fas" class="fas fa-heart"></i>
+          <img id="card-img"
+            src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
+        </a>
+        <a href="">
+        </a>
+        <div class="card-content text-center p-3">
+          <h2 class="card-title">
+            <a href="">
+              Pups
+            </a>
+          </h2>
+          <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odio iure, dolore maxime voluptatum
+            ex inventore nihil tempora magni, asperiores nam ipsam debitis odit facere!</p>
+        </div>
+        <div class="card-read-more pt-2">
+          <div class="card-footer-bottom d-flex justify-content-around py-2">
+            <div class="avatar-all">
+              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="avatar-text h2-font"style="font-size:20px">Gad</div>
+              <p style="font-size:12px">Montreal</p>
+            </div>
+
+            <div class="avatar-all">
+              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="avatar-text h2-font"style="font-size:20px">Karine</div>
+              <p style="font-size:12px">Montreal</p>
+
+            </div>
+            <div class="avatar-all">
+              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="avatar-text h2-font" style="font-size:20px">Pascal</div>
+              <p style="font-size:12px">Montreal</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="detail-footer">
+          <a href="">
+            <div class="p-font-info details">Details</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
