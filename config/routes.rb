@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "projects#index"
+  root to: 'pages#home'
   resources :projects, only: [:create, :edit, :show, :update, :new] do
     resources :chatrooms, only: :show do
       resources :messages, only: :create
