@@ -13,23 +13,21 @@ User.reset_pk_sequence
 
 puts "Creating Gad, Karine and Pascal"
 
-# filegad = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339200/jeff-tumale-5sYQ1uD4pHU-unsplash_sl7jog.jpg')
+filegad = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339200/jeff-tumale-5sYQ1uD4pHU-unsplash_sl7jog.jpg')
 gad = User.create!(name: "gad", email: "gad@email.com", password: "123456", city: "Montreal", job_title: "Fullstack Developer")
-# gad.avatar.attach(io: filegad, filename: 'nes.jpg', content_type: 'image/jpg')
+gad.avatar_photo.attach(io: filegad, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Gad created!"
 
-# filekarine = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339310/sarah-rodriguez-k4TE7Z-nK8M-unsplash_drs8cw.jpg')
+filekarine = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339310/sarah-rodriguez-k4TE7Z-nK8M-unsplash_drs8cw.jpg')
 karine = User.create!(name: "karine", email: "karine@email.com", password: "123456", city: "Toronto", job_title: "Frontend Developer")
-# karine.avatar.attach(io: filekarine, filename: 'nes.jpg', content_type: 'image/jpg')
+karine.avatar_photo.attach(io: filekarine, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Karine created!"
 
-# filepascal = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339186/elizeu-dias-2EGNqazbAMk-unsplash_h5tkk1.jpg')
+filepascal = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339186/elizeu-dias-2EGNqazbAMk-unsplash_h5tkk1.jpg')
 pascal = User.create!(name: "pascal", email: "pascal@email.com", password: "123456", city: "Ottawa", job_title: "Backend Developer")
-# pascal.avatar.attach(io: filepascal, filename: 'nes.jpg', content_type: 'image/jpg')
+pascal.avatar_photo.attach(io: filepascal, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Pascal created!"
-
 puts "Creating Projects"
-
 puts "Creating skills for each users"
 
 skills_name = ['Ruby', 'Javascript', 'Python', 'React']
@@ -47,27 +45,23 @@ end
 users = User.all
 users.each do |user|
   UserSkill.create!(
-    skill: Skill.all.sample, 
+    skill: Skill.all.sample,
     user: user
   )
 end
 
 
-
-# file1 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615303525/call-me-fred-6KZcjJoaqNI-unsplash_d7ewhm.jpg')
+file1 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615303525/call-me-fred-6KZcjJoaqNI-unsplash_d7ewhm.jpg')
 project1 = Project.create!(user_id: "#{rand(1..3)}", name: "Miss Sunshine", description: "Bacon ipsum dolor amet biltong pork chop bresaola sausage ball tip alcatra bacon spare ribs strip steak. Hamburger boudin capicola, shoulder bresaola flank pastrami.", chatroom_link: "www.google.com", teammates: [2,3] )
-# project1.photo.attach(io: file1, filename: 'nes.jpg', content_type: 'image/jpg')
+project1.photo.attach(io: file1, filename: 'nes.jpg', content_type: 'image/jpg')
 
-# file2 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615305428/ji9smwacxk4bs8jdh48s3do06a40.jpg')
+file2 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615305428/ji9smwacxk4bs8jdh48s3do06a40.jpg')
 project2 = Project.create!(user_id: "#{rand(1..3)}", name: "Pups", description: "Pork belly buffalo chislic, boudin brisket meatloaf shank turkey pork capicola landjaeger biltong andouille tri-tip. Swine t-bone sirloin meatloaf kevin venison. Salami drumstick burgdoggen turducken bresaola boudin, turkey biltong jowl swine.", chatroom_link: "www.google.com", teammates: [2,3] )
-# project2.photo.attach(io: file13, filename: 'nes.jpg', content_type: 'image/jpg')
+project2.photo.attach(io: file2, filename: 'nes.jpg', content_type: 'image/jpg')
 
-# file3 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615649521/Screen_Shot_2021-03-13_at_10.31.30_AM_gwcnay.png')
-
+file3 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615649521/Screen_Shot_2021-03-13_at_10.31.30_AM_gwcnay.png')
 project3 = Project.create!(user_id: "#{rand(1..3)}", name: "Build IT", description: "Chislic jowl cow bresaola, pork burgdoggen sausage pastrami short ribs turducken ball tip shank. Salami turkey flank landjaeger filet mignon bacon ball tip chicken.", chatroom_link: "www.google.com", teammates: [1,2] )
-
-
-# project3.photo.attach(io: file2, filename: 'nes.jpg', content_type: 'image/png')
+project3.photo.attach(io: file3, filename: 'nes.jpg', content_type: 'image/png')
 
 puts "create chatrooms"
 

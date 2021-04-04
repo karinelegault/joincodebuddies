@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
     def index
       # raise
         if params[:q].present?
-        
+
             @projects = Project.search_by_name(params[:q])
             # raise
         else
@@ -46,6 +46,6 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-      params.require(:project).permit(:name, :description, :chatroom_link)
+      params.require(:project).permit(:name, :description, :chatroom_link, :photo)
     end
 end
