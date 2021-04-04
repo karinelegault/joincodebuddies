@@ -11,23 +11,23 @@
             <h6>Log in</h6>
             <ul class="footer-links">
               <li><a href="#">My Profile</a></li>
-              <li><a href="#">My Dashboard</a></li>
+              <li><a href="#"><%= link_to "My Dashboard", user_dashboard_requests_path, class: "" %></a></li>
             </ul>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <h6>Projects</h6>
             <ul class="footer-links">
-              <li><a href="#">New Ideas</a></li>
-              <li><a href="#">Finisged Projects</a></li>
-              <li><a href="#">Create a project</a></li>
+              <li><a href="#"><%= link_to "New ideas", projects_path  %></a></li>
+              <li><a href="#"><%= link_to "Projects", projects_path  %></a></li>
+              <li><a href="#"><%= link_to "Create New Project", new_project_path %></a></li>
               <li><a href="#">How it Works</a></li>
             </ul>
           </div>
           <div class="col-xs-6 col-md-3">
-            <h6>Comunity</h6>
+            <h6>Community</h6>
             <ul class="footer-links">
-              <li><a href="#">Profiles</a></li>
+              <li><a href="#"><%= link_to "Profiles", users_path, class: "" %></a></li>
             </ul>
           </div>
         </div>
@@ -36,7 +36,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
+            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
          <a href="#">JoinCodeBuddies</a>.
             </p>
           </div>

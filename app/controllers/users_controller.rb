@@ -12,7 +12,7 @@ class UsersController < ApplicationController
                 lng: user.longitude
               }
           end
-        end           
+        end
   end
 
     def show

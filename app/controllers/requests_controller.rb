@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
         if @request.save!
           flash.now[:notice] = "Your request was sent successfully!"
         end
-        # render "project/show"
+        render "projects/confirmation"
     end
 
     def outgoing_requests
