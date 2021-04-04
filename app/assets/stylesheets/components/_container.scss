@@ -81,9 +81,11 @@
 
 hr {
   width: 100px;
+  background-color: $lightgreen;
 }
 
-.project-container {
-  border-radius: 24px;
-  padding: 20px;
+.profile-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-radius: 20px;
 }
