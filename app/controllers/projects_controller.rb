@@ -43,6 +43,9 @@ class ProjectsController < ApplicationController
       redirect_to project_path(@project)
     end
 
+    def confirmation
+    end
+
     private
 
     def project_params
