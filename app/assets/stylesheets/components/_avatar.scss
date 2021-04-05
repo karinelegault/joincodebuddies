@@ -4,8 +4,8 @@
 }
 
 .avatar {
-  width: 35px;
-  height: 35px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.295)
   // filter: drop-shadow(0 0 0.3rem $almostblack);
@@ -29,3 +29,29 @@
   content: none;
 }
 
+.avatar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.home-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.295)
+}
+
+.learn-how-section  {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-menu {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.295)
+  // filter: drop-shadow(0 0 0.3rem $almostblack);
+}

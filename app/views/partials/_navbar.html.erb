@@ -20,7 +20,7 @@
 
             <li class="nav-item dropdown h1-mobile">
               <% if current_user.avatar_photo.attached? %>
-              <div class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= cl_image_tag current_user.avatar_photo.key, height: 20, width: 20, crop: :fill, class: "avatar"%></div>
+              <div class="avatar-menu dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= cl_image_tag current_user.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%></div>
             <% else %>
               <%= cl_image_tag("https://res.cloudinary.com/drlbljn6y/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1615303526/michael-dam-mEZ3PoFGs_k-unsplash_byqvkv.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
             <% end %>
