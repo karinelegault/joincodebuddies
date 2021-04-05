@@ -66,6 +66,19 @@ $inter: "Inter";
   font-weight: lighter;
 }
 
+
+.h1-font-home {
+  font-size: 64px;
+  font-family: $montserrat;
+}
+
+.h2-font-home {
+  // font-weight: bold;
+  font-size: 45px;
+  font-family: $montserrat;
+  // color: #313131;
+
+}
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
