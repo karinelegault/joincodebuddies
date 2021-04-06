@@ -1,12 +1,14 @@
 # require 'faker'
 require "open-uri"
-
+puts " Now deleting all Chatroom..."
 puts " Now deleting all Requests..."
 puts " Now deleting all Projects..."
 puts " Now deleting all Users..."
+Chatroom.delete_all
 Request.delete_all
 Project.delete_all
 User.delete_all
+Chatroom.reset_pk_sequence
 Request.reset_pk_sequence
 Project.reset_pk_sequence
 User.reset_pk_sequence
