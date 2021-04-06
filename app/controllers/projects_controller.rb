@@ -46,6 +46,27 @@ class ProjectsController < ApplicationController
     def confirmation
     end
 
+    def change_status
+      @project = Project.find(params[:project_id])
+      @project.status = "finished"
+      if @project.save!
+        flash.now[:notice] = "Your project is now presented as completed, you can still continue to improve it, but no one can join it!"
+      end
+      render "projects/confirmation"
+    end
+
+    def idea_status
+      @project = Project.find(params[:id])
+      @project.status = "idea"
+      @project.save
+    end
+
+    def finished_status
+      @project = Project.find(params[:id])
+      @project.status = "finished"
+      @project.save
+    end
+
     private
 
     def project_params
