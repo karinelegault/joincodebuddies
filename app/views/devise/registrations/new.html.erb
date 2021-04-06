@@ -21,7 +21,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-<%= simple_form_for(user) do |f| %>
+<%= simple_form_for(@user) do |f| %>
   <%= f.input :avatar_photo, as: :file %>
 <% end %>
 
