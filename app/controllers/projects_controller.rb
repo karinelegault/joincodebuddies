@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
     def index
       # raise
+      @user = current_user
         if params[:q].present?
 
             @projects = Project.search_by_name(params[:q])
@@ -11,6 +12,7 @@ class ProjectsController < ApplicationController
     end
 
     def show
+      @user = current_user
       @project = Project.find(params[:id])
     end
 
@@ -21,6 +23,7 @@ class ProjectsController < ApplicationController
     def create
       @project = Project.new(project_params)
       @project.user = current_user
+      @project.status = "idea"
       @chatroom = Chatroom.new
       @chatroom.user = current_user
       @chatroom.project = @project
@@ -46,21 +49,6 @@ class ProjectsController < ApplicationController
     def confirmation
     end
 
-    def change_status
-      @project = Project.find(params[:project_id])
-      @project.status = "finished"
-      if @project.save!
-        flash.now[:notice] = "Your project is now presented as completed, you can still continue to improve it, but no one can join it!"
-      end
-      render "projects/confirmation"
-    end
-
-    def idea_status
-      @project = Project.find(params[:id])
-      @project.status = "idea"
-      @project.save
-    end
-
     def finished_status
       @project = Project.find(params[:id])
       @project.status = "finished"
@@ -70,6 +58,6 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-      params.require(:project).permit(:name, :description, :chatroom_link, :photo)
+      params.require(:project).permit(:name, :description, :chatroom_link, :photo, :status)
     end
 end
