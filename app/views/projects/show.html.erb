@@ -1,3 +1,26 @@
+<div class="container">
+
+    <div id="notice-wrapper">
+        <% flash.each do |type, msg| %>
+        <div class=" alert alert-info">
+            <%= msg %>
+        </div>
+        <% end %> 
+    </div>
+
+    <h1><%= @project.name %></h1>
+        <%= link_to "Request to Join", project_join_request_path(@project)  %>
+    <p><%= @project.description %></p>
+    <% @chatroom = @project.chatroom %>
+    <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom)  %>
+    <%= link_to "Back to projects", root_path, class: "btn-gradient"  %>
+    <%= link_to "Go see", projects_path(@project)  %>
+
+<script>  
+    document.getELementsByClassName("alert ").fadeOut(3000);
+</script>
+
+</div>
 
 <div class="project-show-container mb-5 mt-5">
   <div class="card-product">
@@ -36,4 +59,3 @@
   </div>
 
 </div>
-

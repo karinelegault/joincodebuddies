@@ -6,8 +6,12 @@ class RequestsController < ApplicationController
         @request.project_id = params[:project_id]
         @request.user_id = current_user.id
         @request.status = "pending"
-        if @request.save!
-          flash.now[:notice] = "Your request was sent successfully!"
+        if request_exist? == true
+          # raise
+          flash.now[:notice] = "You've already sent a request"
+          render "projects/show"
+        else
+          @request.save!
         end
         render "projects/confirmation"
     end
@@ -37,6 +41,13 @@ class RequestsController < ApplicationController
     end
 
     def components
+    end
+
+    def request_exist?
+      array = Request.where(project_id: @project.id, user_id: current_user.id)
+      if array.length > 0
+        return true
+      end
     end
 
     def user_dashboard_requests
