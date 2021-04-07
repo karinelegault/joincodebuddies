@@ -4,18 +4,20 @@
 }
 
 .avatar {
-  width: 75px;
-  height: 75px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.295)
   // filter: drop-shadow(0 0 0.3rem $almostblack);
 }
 .avatar-all {
   text-align: center;
+  
 }
 
 .avatar-text {
   margin-top: 10px;
+  font-size: 10px;
 }
 
 .project-container {
@@ -32,6 +34,7 @@
 .avatar-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  
 }
 
 .home-avatar {
