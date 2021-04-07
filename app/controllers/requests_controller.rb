@@ -13,7 +13,7 @@ class RequestsController < ApplicationController
         else
           @request.save!
         end
-        render "projects/confirmation"
+
     end
 
     def outgoing_requests
