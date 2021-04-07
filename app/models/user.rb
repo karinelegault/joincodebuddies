@@ -3,9 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_one_attached :avatar_photo
   has_many :projects, dependent: :destroy
   has_many :user_skills, dependent: :destroy
-  has_many :skills, through: :user_skills 
+  has_many :skills, through: :user_skills
   #possible problem on line 10
   has_many :projects, through: :requests
   has_many :requests, dependent: :destroy

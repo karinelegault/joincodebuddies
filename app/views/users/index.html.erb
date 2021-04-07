@@ -1,17 +1,130 @@
-<form id="form"> 
-  <input type="search" id="query" name="q" placeholder="Search...">
-  <button>Search</button>
-</form>
-<div class="container d-flex">
-     <div class="users-main">
-          <% @users.each do |user| %>
-          <%= user.email %>
-          <%= link_to 'See Profile', user_path(user) %>
-          <% end %>
-     </div>
-          <div id="map"
-               style="width: 100%; height: 600px;"
-               data-markers="<%= @markers.to_json %>"
-               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-          </div>
+  <br>
+  <div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url(https://images.unsplash.com/photo-1528820624198-03cf9845bec0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
+    <div class="container">
+      <h1 class="h1-font">Join the community</h1>
+      <p class="p-font">Find your team</p>
+    </div>
+  </div>
+  <hr>
+
+  <div class="container">
+    <div class="text-comunity text-center">
+      <h2>Our Community</h2>
+      <p>Choose your team, build your network</p>
+    </div>
+
+    <div class="container-form">
+      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input
+        name="utf8" type="hidden" value="&#x2713;" />
+          <div class="search-form-control form-group">
+            <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+            <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        </form>
+      </div>
+  </div>
+
+  
+  <div class="container p-5 bg-white map-container mt-5">
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+<div class="profile-container mt-5 bg-white p-5">
+      <div class="avatar-all mb-5">
+        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
+        <div class="avatar-text h2-font">Neo</div>
+      <div class="p-font">Montreal</div>
+      </div>
+        <div class="avatar-all">
+          <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
+          <div class="avatar-text h2-font">Neo</div>
+        <div class="p-font">Montreal</div>
+      </div>
+      <div class="avatar-all">
+        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
+        <div class="avatar-text h2-font">Neo</div>
+      <div class="p-font">Montreal</div>
+    </div>
+    <div class="avatar-all">
+        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
+        <div class="avatar-text h2-font">Neo</div>
+      <div class="p-font">Montreal</div>
+    </div>
+    <div class="avatar-all">
+        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
+        <div class="avatar-text h2-font">Neo</div>
+      <div class="p-font">Montreal</div>
+    </div>
+    <div class="avatar-all">
+        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
+        <div class="avatar-text h2-font">Neo</div>
+      <div class="p-font">Montreal</div>
+    </div>
+    <div class="avatar-all">
+        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
+        <div class="avatar-text h2-font">Neo</div>
+      <div class="p-font">Montreal</div>
+    </div>
+    <div class="avatar-all">
+        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
+        <div class="avatar-text h2-font">Neo</div>
+      <div class="p-font">Montreal</div>
+    </div>
+  </div>
+    
+  </div>
+
+  <br>
+
+
+
+ <div class="container project-banner d-flex mt-5">
+  <div class="left-text">
+   <div class="h2-font">Join our community</div>
+    <div class="h2-font banner-green-text">Code, build and learn</div>
+    <br>
+    <div class="p-font sign-up">Sign up</div>
+  </div>
+  <div class="right-area">
+    <div class="container form-container-banner-signup">
+  <form>
+    <div class="text-area text-center">
+      <h2>Create account</h2>
+      <p>Already have an account? <span>Sign in</span></p>
+    </div>
+    <div class="form-row">
+      <div class="col-12">
+        <input type="text" class="form-control" placeholder="Username">
+      </div>
+      <div class="col-6">
+        <input type="text" class="form-control" placeholder="First name">
+      </div>
+      <div class="col-6">
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+      <div class="col-12">
+        <input type="text" class="form-control" placeholder="Email">
+      </div>
+    </div>
+    <div class="sign-up-form-btn">
+      <div class="p-font sign-up-form">Sign up</div>
+    </div>
+  </form>
+ </div>
+  </div>
 </div>
+
+<br>
+<hr>
+<br>
+
+
+
+
+
+
+

@@ -1,32 +1,81 @@
-<%= link_to "Outgoing Requests", outgoing_requests_path %>
-<%= link_to "Incoming Requests", incoming_requests_path %>
 
 <% if !@incoming_requests.nil? %>
 <h2>Requests from members</h2>
+<table>
+  <tr>
+    <th>Project photo</th>
+    <th>Project name</th>
+    <th>Requested by:</th>
+    <th>Status</th>
+  </tr>
     <% @incoming_requests.each do |request| %>
-        <div>
-            <h3>You've received a request for: <%= request.project.name %></h3>
-            <h3>User who requested: <%= request.user.email %></h3>
-            <h3><%= request.status %></h3>
-            <%# <%= link_to "accept request", accept_requests_path  %>
-            <%= link_to "deny request", deny_requests_path(request), method: :patch %>
-            <%= link_to "accept request", accept_requests_path(request), method: :patch %>
-            <p>****************************************</p>
+    <tr>
+      <td><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%></td>
+      <td><%= request.project.name %></td>
+      <td><%= cl_image_tag(request.user.avatar_photo.key, class: "avatar", height: 40, width: 40, crop: :fill) %><br><%= request.user.email %></td>
+      <td>
+        <div class="dropdown">
+          <% button_color =  case request.status %>
+          <% when "accepted" %>
+            <% "btn-success" %>
+          <% when "declined" %>
+            <% "btn-danger" %>
+          <% when "pending" %>
+            <% "btn-secondary" %>
+          <% end %>
+            <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= request.status %>
+            </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item "><%= link_to "accept request", accept_requests_path(request), method: :patch,  class: "dropdown-item " %></button>
+            <button class="dropdown-item "><%= link_to "deny request", deny_requests_path(request), method: :patch, class: "dropdown-item "%></button>
+          </div>
         </div>
-<% end %>
-
-<% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<br>
+<br>
 
 <% if !@outgoing_requests.nil? %>
 <h2>My Projects</h2>
-    <% @outgoing_requests.each do | request| %>
-        <div>
-            <p> Your request for  <%= request.project.name %></p>
-            <p> is currently:  <%= request.status %> </p>
+<table>
+  <tr>
+    <th>Project photo</th>
+    <th>Project name</th>
+    <th>Status</th>
+  </tr>
+    <% @outgoing_requests.each do |request| %>
+    <tr>
+      <td><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%></td>
+      <td><%= request.project.name %></td>
+      <td>
+        <div class="dropdown">
+          <% button_color =  case request.status %>
+          <% when "accepted" %>
+            <% "btn-success" %>
+          <% when "declined" %>
+            <% "btn-danger" %>
+          <% when "pending" %>
+            <% "btn-secondary" %>
+          <% end %>
+            <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= request.status %>
+            </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item "><%= link_to "accept request", accept_requests_path(request), method: :patch,  class: "dropdown-item " %></button>
+            <button class="dropdown-item "><%= link_to "deny request", deny_requests_path(request), method: :patch, class: "dropdown-item "%></button>
+          </div>
         </div>
-        <p>****************************************</p>
-    <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+ <% end %>
 <% end %>
+
 
 <%= link_to "Home Page", root_path%>
 

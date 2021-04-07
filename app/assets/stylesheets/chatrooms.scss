@@ -1,3 +1,55 @@
 // Place all the styles related to the chatrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.sides {
+  flex-grow: 0;
+  background-color: white;
+  max-width: 25%;
+}
+
+.chat-section {
+  flex-grow: 1;
+  background-color: $lightgreen;
+  max-width: 50%;
+
+}
+
+.project-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chatroom-card img {
+  width: 270px;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+
+}
+
+.chatroom-card {
+  width: 270px;
+  max-height: 450px;
+  position: relative;
+  margin: 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 1, 0.233);
+}
+
+.edit-icon {
+  position: absolute;
+  left: 192px;
+  top: 110px;
+}
+
+.members-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 50px 50px;
+  grid-gap: 32px;
+  margin-left: 75px;;
+}
