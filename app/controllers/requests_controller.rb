@@ -6,14 +6,13 @@ class RequestsController < ApplicationController
         @request.project_id = params[:project_id]
         @request.user_id = current_user.id
         @request.status = "pending"
-        if request_exist? == true
-          # raise
-          flash.now[:notice] = "You've already sent a request"
+        if request_exists? == true
           render "projects/show"
+          flash.now[:notice] = "You've already sent a request"
         else
           @request.save!
         end
-        render "projects/confirmation"
+        redirect_to "projects/confirmation"
     end
 
     def outgoing_requests
@@ -42,23 +41,23 @@ class RequestsController < ApplicationController
 
     def components
     end
-
-    def request_exist?
-      array = Request.where(project_id: @project.id, user_id: current_user.id)
-      if array.length > 0
-        return true
-      end
-    end
-
+    
     def user_dashboard_requests
       projects = Project.where(user_id: current_user.id)
       my_requests = projects.map { |project| project.requests }
       @incoming_requests = my_requests.flatten
       @outgoing_requests = Request.where(user_id: current_user.id)
     end
-
+    
     private
-
+    
+    def request_exists?
+      array = Request.where(project_id: @project.id, user_id: current_user.id)
+      if array.length > 0
+        return true
+      end
+    end
+    
     def request_params
         params.require(:request).permit(:project_id, :user_id, :status)
     end
