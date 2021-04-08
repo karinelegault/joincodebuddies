@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
 
     def join_request
+        @user = current_user
         @project = Project.find(params[:project_id])
         @request = Request.new
         @request.project_id = params[:project_id]
@@ -51,6 +52,7 @@ class RequestsController < ApplicationController
     end
 
     def user_dashboard_requests
+      @user = current_user
       projects = Project.where(user_id: current_user.id)
       my_requests = projects.map { |project| project.requests }
       @incoming_requests = my_requests.flatten

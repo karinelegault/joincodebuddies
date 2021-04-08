@@ -5,7 +5,7 @@
         <div class=" alert alert-info">
             <%= msg %>
         </div>
-        <% end %> 
+        <% end %>
     </div>
 
     <h1><%= @project.name %></h1>
@@ -16,8 +16,8 @@
     <%= link_to "Back to projects", root_path, class: "btn-gradient"  %>
     <%= link_to "Go see", projects_path(@project)  %>
 
-<script>  
-    document.getELementsByClassName("alert ").fadeOut(3000);
+<script>
+    document.getElementsByClassName("alert ").fadeOut(3000);
 </script>
 
 </div>

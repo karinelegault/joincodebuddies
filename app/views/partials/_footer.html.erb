@@ -8,20 +8,20 @@
           </div>
 
           <div class="col-xs-6 col-md-3">
+            <% if user_signed_in? %>
             <h6>Log in</h6>
             <ul class="footer-links">
-              <li><a href="#"><%= link_to "My Profile", "#", class: "" %></a></li>
+              <li><a href="#"><%= link_to "My Profile", user_path(@user), class: "" %></a></li>
               <li><a href="#"><%= link_to "My Dashboard", user_dashboard_requests_path, class: "" %></a></li>
             </ul>
+            <% end %>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <h6>Projects</h6>
             <ul class="footer-links">
-              <li><a href="#"><%= link_to "New ideas", projects_path  %></a></li>
               <li><a href="#"><%= link_to "Projects", projects_path  %></a></li>
               <li><a href="#"><%= link_to "Create New Project", new_project_path %></a></li>
-              <li><a href="#">How it Works</a></li>
             </ul>
           </div>
           <div class="col-xs-6 col-md-3">
@@ -29,6 +29,7 @@
             <ul class="footer-links">
               <li><a href="#"><%= link_to "Profiles", users_path, class: "" %></a></li>
             </ul>
+            <h6>How it works</h6>
           </div>
         </div>
         <hr>
