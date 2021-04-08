@@ -14,7 +14,7 @@ $montserrat: "Montserrat";
 $inter: "Inter";
 
 .h1-font {
-  font-size: 64px;
+  font-size: 56px;
   font-family: $montserrat;
 }
 
@@ -31,7 +31,18 @@ $inter: "Inter";
 .p-font {
   font-size: 16px;
   font-family: $inter;
-  font-weight: lighter;
+  font-weight: 300;
+}
+
+.h4-font {
+  font-size: 16px;
+  font-family: $montserrat;
+  color: #99BBAD;
+}
+
+.h5-font {
+  font-size: 20px;
+  font-family: $montserrat;
 }
 
 .h1-mobile {
@@ -55,6 +66,19 @@ $inter: "Inter";
   font-weight: lighter;
 }
 
+
+.h1-font-home {
+  font-size: 64px;
+  font-family: $montserrat;
+}
+
+.h2-font-home {
+  // font-weight: bold;
+  font-size: 45px;
+  font-family: $montserrat;
+  // color: #313131;
+
+}
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
