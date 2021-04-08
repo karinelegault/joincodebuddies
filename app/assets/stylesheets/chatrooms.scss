@@ -5,18 +5,25 @@
   flex-grow: 0;
   background-color: white;
   max-width: 25%;
+
 }
 
 .chat-section {
   flex-grow: 1;
-  background-color: $lightgreen;
+  background-color: green;
   max-width: 50%;
 
 }
 
 .project-container {
   max-width: 1200px;
+  max-height: 700px;
   margin: 0 auto;
+  // background: white;
+}
+
+.project-column {
+  box-shadow: 0 0 15px rgba(0, 0, 1, 0.233);
 }
 
 .chatroom-card img {
@@ -51,5 +58,25 @@
   display: grid;
   grid-template-columns: 50px 50px;
   grid-gap: 32px;
-  margin-left: 75px;;
+  margin-left: 75px;
+  margin-bottom: 15px;
 }
+
+.chat-section p {
+  color: white;
+  background-color: green;
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 40px;
+}
+
+.message-container {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.author {
+
+}
+
+

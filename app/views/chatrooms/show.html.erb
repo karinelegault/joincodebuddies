@@ -20,8 +20,7 @@
   <% end %>
 </div>
 
-
-<div class="project-container d-flex">
+<div class="project-container d-flex mb-5">
   <div class="project-column sides">
     <div class="chatroom-card text-center">
       <div class="edit-icon"><i class="fas fa-pencil-alt"></i></div>
@@ -29,6 +28,7 @@
       <h2 class="h2-font p-3">Project Name</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor asperiores eveniet in saepe corrupti fugit neque, architecto ipsam vitae eius.</p>
     </div>
+    <%# MEMBER SECTION %>
     <div class="members text-center">
       <h2 class="h2-font mb-3">Members</h2>
       <div class="members-section">      
@@ -50,14 +50,40 @@
       </div>
     </div>
     <hr>
-    <div class="links">
+
+    <%# LINK SECTION %>
+    <div class="links ">
     <div class="arrow-right-icon"><i class="fas fa-arrow-right"></i></div>
       <div class="edit-icon"><i class="fas fa-pencil-alt"></i></div>
       <div class="email-icon"><i class="far fa-envelope"></i></div>
     </div>
   </div>
+    <%# CHATROOM SECTION %>
   <div class="project-column chat-section">
-    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, qui.</h2>
+    <h1 class="h2-font text-center mt-2"><%= @chatroom.name %></h1>
+    <hr>
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+        <div class="message-container d-flex" id="message-<%= message.id %>">
+          <i class="author d-flex">
+          <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani"  />   
+          <%# <p><%= message.user.email %>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+      <p><%= message.content %></p>
+    </div>
+    <% end %>
+    <%# CHATROOM BOX SECTION %>
+    <div class="chat-box">
+      
+        <% @project = @chatroom.project %>
+            <%= simple_form_for([@project, @chatroom, @message]) do |f| %>
+            <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
+          <%= f.submit class: "btn btn-primary"%>
+        <% end %>
+    </div>
+  </div>
+
   </div>
   <div class="project-column sides">
   <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, eaque?</h3>
