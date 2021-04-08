@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     def index
+      @user = current_user
           if params[:q].present?
             @users = User.search_by_username(params[:q])
             # raise

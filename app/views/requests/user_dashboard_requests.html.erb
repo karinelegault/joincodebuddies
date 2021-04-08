@@ -1,3 +1,15 @@
+<% if !@incoming_requests.nil? %>
+<h2>My ideas</h2>
+<table>
+  <tr>
+    <th>Project photo</th>
+    <th>Project name</th>
+    <th>Status</th>
+  </tr>
+
+</table>
+<% end %>
+
 
 <% if !@incoming_requests.nil? %>
 <h2>Requests from members</h2>
@@ -35,6 +47,7 @@
     </tr>
   <% end %>
 </table>
+
 <br>
 <br>
 <br>
@@ -47,6 +60,7 @@
     <th>Project name</th>
     <th>Status</th>
   </tr>
+
     <% @outgoing_requests.each do |request| %>
     <tr>
       <td><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%></td>
@@ -64,19 +78,14 @@
             <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= request.status %>
             </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <button class="dropdown-item "><%= link_to "accept request", accept_requests_path(request), method: :patch,  class: "dropdown-item " %></button>
-            <button class="dropdown-item "><%= link_to "deny request", deny_requests_path(request), method: :patch, class: "dropdown-item "%></button>
-          </div>
+
         </div>
       </td>
     </tr>
   <% end %>
 </table>
- <% end %>
+<% end %>
 <% end %>
 
-
-<%= link_to "Home Page", root_path%>
 
 
