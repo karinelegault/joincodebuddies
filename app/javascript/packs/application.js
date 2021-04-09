@@ -11,6 +11,7 @@ import 'bootstrap';
 import { initChatroomCable } from '../channels/chatroom_channel';
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initVideoCall } from "../video_call/daily";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
@@ -25,4 +26,6 @@ document.addEventListener('turbolinks:load', () => {
 
 document.addEventListener("turbolinks:load", () => {
     initChatroomCable()
+    // Call daily code in there
+    initVideoCall()
 });
