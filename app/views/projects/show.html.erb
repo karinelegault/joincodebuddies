@@ -8,8 +8,17 @@
         <% end %>
     </div>
 
-<script>
-    document.getElementsByClassName("alert ").fadeOut(3000);
+
+    <h1><%= @project.name %></h1>
+        <%= link_to "Request to Join", project_join_request_path(@project)  %>
+    <p><%= @project.description %></p>
+    <% @chatroom = @project.chatroom %>
+    <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom)  %>
+    <%= link_to "Back to projects", root_path, class: "btn-gradient"  %>
+    <%= link_to "Go see", projects_path(@project)  %>
+
+<script>  
+    document.getElementByClassName("alert ").fadeOut(3000);
 </script>
 
 </div>
