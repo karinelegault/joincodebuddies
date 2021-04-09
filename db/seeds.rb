@@ -21,7 +21,7 @@ gad.avatar_photo.attach(io: filegad, filename: 'nes.jpg', content_type: 'image/j
 puts "... Gad created!"
 
 filekarine = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339310/sarah-rodriguez-k4TE7Z-nK8M-unsplash_drs8cw.jpg')
-karine = User.create!(name: "karine", email: "karine@email.com", password: "123456", city: "Toronto", job_title: "Frontend Developper", skills_name: ['Ruby', 'Javascript', 'Python', 'React'])
+karine = User.create!(name: "karine", email: "karine@email.com", password: "123456", city: "Toronto", job_title: "Frontend Developper")
 karine.avatar_photo.attach(io: filekarine, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Karine created!"
 
