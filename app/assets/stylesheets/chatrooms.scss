@@ -1,17 +1,27 @@
 // Place all the styles related to the chatrooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.sides {
+.sides-left {
   flex-grow: 0;
-  background-color: white;
+  background-color: $white;
   max-width: 25%;
+ position: relative;
+ border-radius: 21px 0px 0px 21px;
+}
 
+.sides-right {
+  flex-grow: 0;
+  background-color: $white;
+  max-width: 25%;
+ position: relative;
+ border-radius: 0px 21px 21px 0px;
 }
 
 .chat-section {
   flex-grow: 1;
-  background-color: green;
+  background-color: $lightgreen;
   max-width: 50%;
+  position: relative;
 
 }
 
@@ -35,7 +45,6 @@
 }
 
 .chatroom-card {
-  width: 270px;
   max-height: 450px;
   position: relative;
   margin: 10px;
@@ -63,11 +72,9 @@
 }
 
 .chat-section p {
-  color: white;
-  background-color: green;
-  width: 100%;
-  padding: 8px 16px;
-  border-radius: 40px;
+  color: $white;
+  margin-bottom: 0;
+  line-height: 1;
 }
 
 .message-container {
@@ -79,4 +86,49 @@
 
 }
 
+.chat-text {
+  min-width: 50px;
+  background-color: $darkgreen;
+  padding: 4px 8px;
+  border-radius: 40px;
+  margin-left: 8px;
 
+}
+
+#new_message {
+  display: flex;
+  align-items: center;
+}
+
+.chatform {
+  margin-bottom: 0;
+}
+
+.chatbox{
+  position: absolute;
+  bottom: 0;
+}
+
+#messages {
+  overflow: scroll;
+  max-height: 410px;
+}
+#textarea {
+  width: calc(100% - 30px);
+  margin: 20px;
+  border-radius: 15px;
+  border: 1px solid lightgray;
+  padding: 6px;
+  text-decoration: underline;
+}
+
+.message_content {
+  width: 72%;
+}
+
+#zoom {
+  position: absolute;
+  bottom: 16px;
+  right: 62px;
+  padding: 8px 42px;
+}
