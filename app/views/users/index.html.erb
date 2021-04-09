@@ -27,14 +27,15 @@
   </div>
 
   
-  <div class="container p-5 bg-white map-container mt-5">
+  <div class="container p-5 bg-white map-container mt-5 d-flex">
     <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-<div class="profile-container mt-5 bg-white p-5">
-      <div class="avatar-all mb-5">
+    <div class="profile-container  bg-white p-5">
+      
+      <div class="avatar-all">
         <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
         <div class="avatar-text h2-font">Neo</div>
       <div class="p-font">Montreal</div>
