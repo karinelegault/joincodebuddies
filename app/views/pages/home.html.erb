@@ -35,74 +35,36 @@
     <h3 class="h3-font pt-3">See all the new ideas to join</h3>
     <p class="p-font mb-4">Many of us have amazing ideas and we are looking for the perfect team to build it.</p>
   </div>
-  <div class="row m-3">
-    <div class="col-4">
-      <div class="card">
-        <a class="img-card" href="">
-          <img
-            src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
-        </a>
-        <a href="">
-          <div class="p-font join">Join</div>
-        </a>
+  <div class="container project-container bg-white p-5">
+  <div class="cards">
+    <% @projects.each do |project| %>
+    <div class="">
+      <div class="">
+        <div class="card">
+          <a class="img-card" href="">
+            <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill %>
+          </a>
+          <a href="">
+            <div class="p-font join"><%= link_to "Join", project_path(project)  %>
+            </div>
+          </a>
 
-        <div class="card-content text-center p-3">
-          <h2 class="card-title">
-            <a href="">
-              Pups
-            </a>
-          </h2>
-          <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odio iure, dolore maxime voluptatum
-            ex inventore nihil tempora magni, asperiores nam ipsam debitis odit facere!</p>
+          <div class="card-content text-center p-3">
+            <h2 class="card-title">
+              <a href="">
+                <%= project.name %>
+              </a>
+            </h2>
+            <p class=""><%= project.description %> </p>
+          </div>
+
         </div>
-
       </div>
     </div>
-    <div class="col-4">
-      <div class="card">
-        <a class="img-card" href="">
-          <img
-            src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
-        </a>
-        <a href="">
-          <div class="p-font join">Join</div>
-        </a>
+    <% end %>
 
-        <div class="card-content text-center p-3">
-          <h2 class="card-title">
-            <a href="">
-              Pups
-            </a>
-          </h2>
-          <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odio iure, dolore maxime voluptatum
-            ex inventore nihil tempora magni, asperiores nam ipsam debitis odit facere!</p>
-        </div>
-
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card">
-        <a class="img-card" href="">
-          <img
-            src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
-        </a>
-        <a href="">
-          <div class="p-font join">Join</div>
-        </a>
-
-        <div class="card-content text-center p-3">
-          <h2 class="card-title">
-            <a href="">
-              Pups
-            </a>
-          </h2>
-          <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odio iure, dolore maxime voluptatum
-            ex inventore nihil tempora magni, asperiores nam ipsam debitis odit facere!</p>
-        </div>
-
-      </div>
-    </div>
   </div>
+</div>
 </div>
 
 <%# Projects Cards %>
@@ -275,6 +237,41 @@
 
 </div>
 
+ <div class="container project-banner d-flex mt-5">
+  <div class="left-text">
+   <div class="h2-font">Join our community</div>
+    <div class="h2-font banner-green-text">Code, build and learn</div>
+    <br>
+    <div class="p-font sign-up">Sign up</div>
+  </div>
+  <div class="right-area">
+    <div class="container form-container-banner-signup">
+  <form>
+    <div class="text-area text-center">
+      <h2>Create account</h2>
+      <p>Already have an account? <span>Sign in</span></p>
+    </div>
+    <div class="form-row">
+      <div class="col-12">
+        <input type="text" class="form-control" placeholder="Username">
+      </div>
+      <div class="col-6">
+        <input type="text" class="form-control" placeholder="First name">
+      </div>
+      <div class="col-6">
+        <input type="text" class="form-control" placeholder="Last name">
+      </div>
+      <div class="col-12">
+        <input type="text" class="form-control" placeholder="Email">
+      </div>
+    </div>
+    <div class="sign-up-form-btn">
+      <div class="p-font sign-up-form">Sign up</div>
+    </div>
+  </form>
+ </div>
+  </div>
+</div>
 <br>
 
 <br>
