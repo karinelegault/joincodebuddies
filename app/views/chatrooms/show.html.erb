@@ -18,14 +18,7 @@
     <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
     <%= f.submit %>
   <% end %>
-    
-    <script>
-      callFrame = window.DailyIframe.createFrame();
-      callFrame.join({ url: 'codebuddies.daily.co' })
-    </script>
- 
-  
-
+  <button type="button" id="callbutton" class="btn btn-success">Start a call!</button>
 </div>
 
 <div class="project-container d-flex mb-5">
