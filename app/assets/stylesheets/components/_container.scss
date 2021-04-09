@@ -85,9 +85,14 @@ hr {
 }
 
 .profile-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  border-radius: 20px;
+  margin-left: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.242);
+  display:grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: auto auto 1fr 1fr 1;
+
+  grid-gap:40px;
+  
 }
 
 .show-page-project {
