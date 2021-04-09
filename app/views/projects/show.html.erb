@@ -8,14 +8,6 @@
         <% end %>
     </div>
 
-    <h1><%= @project.name %></h1>
-        <%= link_to "Request to Join", project_join_request_path(@project)  %>
-    <p><%= @project.description %></p>
-    <% @chatroom = @project.chatroom %>
-    <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom)  %>
-    <%= link_to "Back to projects", root_path, class: "btn-gradient"  %>
-    <%= link_to "Go see", projects_path(@project)  %>
-
 <script>
     document.getElementsByClassName("alert ").fadeOut(3000);
 </script>
@@ -27,13 +19,10 @@
     <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-product-infos ml-3">
       <h1 class="h2-font"><%= @project.name %></h1>
-        <%= link_to "Request to Join", project_join_request_path(@project)  %>
-        <% @chatroom = @project.chatroom %>
-        <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom)  %>
-        <%= link_to "Back to projects", root_path, class: "btn-gradient"  %>
-        <%= link_to "Go see", projects_path(@project)  %>
+      <%= link_to "Join", project_join_request_path(@project), class: "join"  %>
+      <br>
       <p class="p-font"><%= @project.description %></p>
-      <hr>
+      <br><br>
         <h3 class="h2-font members">Members</h3>
       <div class="members d-flex mt-3 ">
           <div class="avatar-all show-page-project ">
@@ -55,7 +44,9 @@
           </div>
       </div>
     </div>
-
   </div>
 
+        <% @chatroom = @project.chatroom %>
+        <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom), class: "create-project"  %>
+        <%= link_to "Back to projects", root_path, class: "create-project"  %>
 </div>
