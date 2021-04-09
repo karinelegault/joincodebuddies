@@ -42,6 +42,7 @@ class RequestsController < ApplicationController
     end
 
     def components
+      @user = current_user
     end
 
     def request_exist?

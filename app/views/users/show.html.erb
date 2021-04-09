@@ -1,11 +1,35 @@
-<h1><%= @user.email %></h1>
-<h2><%= @user.name %></h2>
-<h3><%= @user.city %></h3>
-<p><%= @user.job_title %></p>
-<ul>
-<% @user.skills.to_a.each do |user_skill| %>
-<li>
-<%= user_skill.name %>
-</li>
-<% end %>
-</ul>
+<br>
+<br>
+
+<div class="container container-user-info">
+  <div class="user-info d-flex my-3">
+    <img src="https://kitt.lewagon.com/placeholder/users/cveneziani" alt="">
+    <div class="user-text py-2">
+      <h2><%= @user.name.capitalize %></h2>
+      <p><%= @user.job_title %></p>
+      <p class="location mr-2"><%= @user.city %></p>
+    </div>
+  </div>
+    <div class="projects-user d-flex">
+    <a href="">
+        <div class=""><%= link_to "Create Project", new_project_path, class: "p-font create-project" %></div>
+    </a>
+    </div>
+  <div class="user-stack text-center">
+    <br>
+    <h3>My Skills</h3>
+      <div class="grid">
+        <% @user.skills.to_a.each do |user_skill| %>
+        <p><%= user_skill.name %></p>
+      </div>
+      <% end %>
+  <hr>
+  </div>
+  <div class="icons d-flex">
+    <div class="email-icon"><i class="far fa-envelope"></i></div>
+    <div class="copy-icon"><i class="fas fa-link"></i></div>
+  </div>
+</div>
+
+<br>
+<br>
