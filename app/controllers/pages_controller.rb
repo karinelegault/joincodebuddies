@@ -3,10 +3,10 @@ class PagesController < ApplicationController
     @user = current_user
     @projects = Project.all
     @users = User.all
+    @finished_projects = Project.where(status: "finished")
   end
 
-  def finished_projects
-  end
+
 
   
 end
