@@ -2,8 +2,7 @@ class PagesController < ApplicationController
   def home
     @user = current_user
     @projects = Project.all
-    # finished_projects
-    @finished_projects = Project.where(status: "finished")
+    @users = User.all
   end
 
   def finished_projects
