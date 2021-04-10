@@ -39,27 +39,27 @@ marie = User.create!(name: "marie", email: "marie@email.com", password: "123456"
 marie.avatar_photo.attach(io: filemarie, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Marie created!"
 filejohn = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067131/mubariz-mehdizadeh-Py8F6-hRn5o-unsplash_ek1nf9.jpg')
-john = User.create!(name: "john", email: "john@email.com", password: "123456", city: "Laval", job_title: "Backend Developper")
+john = User.create!(name: "john", email: "john@email.com", password: "123456", city: "Laval, Qc", job_title: "Backend Developper")
 john.avatar_photo.attach(io: filejohn, filename: 'nes.jpg', content_type: 'image/jpg')
 filekim = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067106/matheus-ferrero-W7b3eDUb_2I-unsplash_fq6oi1.jpg')
-kim = User.create!(name: "kim", email: "kim@email.com", password: "123456", city: "Bromont", job_title: "Backend Developper")
+kim = User.create!(name: "kim", email: "kim@email.com", password: "123456", city: "Vancouver", job_title: "Backend Developper")
 kim.avatar_photo.attach(io: filekim, filename: 'nes.jpg', content_type: 'image/jpg')
 filerose = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067772/tamara-bellis-JoKS3XweV50-unsplash_yp54jj.jpg')
 rose = User.create!(name: "rose", email: "rose@email.com", password: "123456", city: "Sherbrooke", job_title: "Frontend Developper")
 rose.avatar_photo.attach(io: filerose, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Rose created!"
 filemax = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067878/christian-buehner-DItYlc26zVI-unsplash_mqwjgx.jpg')
-max = User.create!(name: "max", email: "max@email.com", password: "123456", city: "Trois-Rivieres", job_title: "Backend Developper")
+max = User.create!(name: "max", email: "max@email.com", password: "123456", city: "Sherbrooke", job_title: "Backend Developper")
 max.avatar_photo.attach(io: filemax, filename: 'nes.jpg', content_type: 'image/jpg')
 filesteph = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067800/eye-for-ebony-vYpbBtkDhNE-unsplash_auscwj.jpg')
-steph = User.create!(name: "steph", email: "steph@email.com", password: "123456", city: "Oshawa", job_title: "Backend Developper")
+steph = User.create!(name: "steph", email: "steph@email.com", password: "123456", city: "Montreal", job_title: "Backend Developper")
 steph.avatar_photo.attach(io: filesteph, filename: 'nes.jpg', content_type: 'image/jpg')
 filesuzie = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067830/mathias-huysmans-U4JDjYmjn1g-unsplash_bg0xiu.jpg')
 suzie = User.create!(name: "suzie", email: "suzie@email.com", password: "123456", city: "Gatineau", job_title: "Frontend Developper")
 suzie.avatar_photo.attach(io: filesuzie, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Suzie created!"
 filepeter = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067902/irene-strong-v2aKnjMbP_k-unsplash_kxizrx.jpg')
-peter = User.create!(name: "peter", email: "peter@email.com", password: "123456", city: "St-Hubert", job_title: "Backend Developper")
+peter = User.create!(name: "peter", email: "peter@email.com", password: "123456", city: "Montreal", job_title: "Backend Developper")
 peter.avatar_photo.attach(io: filepeter, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "Creating Projects"
 puts "Creating skills for each users"
