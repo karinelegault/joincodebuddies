@@ -57,6 +57,12 @@ class ProjectsController < ApplicationController
       @project.status = "finished"
       @project.save
     end
+    
+    def idea_status
+      @project = Project.find(params[:id])
+      @project.status = "idea"
+      @project.save
+    end
 
     private
 

@@ -4,4 +4,9 @@ class PagesController < ApplicationController
     @projects = Project.all
     @users = User.all
   end
+
+  def finished_projects
+  end
+
+  
 end
