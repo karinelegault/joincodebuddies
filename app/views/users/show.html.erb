@@ -1,7 +1,7 @@
 
 
-<div class="container container-user-info-dashboard p-3 d-flex bg-white mt-5">
-  <div class="user-side my-5">
+<div class="container container-user-info-dashboard p-3 d-flex  mt-5">
+  <div class="user-side ">
     <div class="user-info d-flex my-3">
       <a class="img-card-dashboard" href="">
         <%= cl_image_tag @user.avatar_photo.key, height: 100, width: 100, crop: :fill %>
@@ -34,7 +34,7 @@
   </div>
 
   <%# Right Side %>
-  <div class="project-side-profile  bg-white ">
+  <div class="project-side-profile  bg-white p-5 ml-2 ">
     <h2 class="h2-font mx-3">Projects:</h2>
       <div class="my-projects-container">
         <div class="card project-finish">
