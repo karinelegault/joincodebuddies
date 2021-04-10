@@ -8,4 +8,6 @@ class PagesController < ApplicationController
 
   def finished_projects
   end
+
+  
 end
