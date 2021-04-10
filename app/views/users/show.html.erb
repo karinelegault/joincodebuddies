@@ -3,7 +3,9 @@
 
 <div class="container container-user-info">
   <div class="user-info d-flex my-3">
-    <img src="https://kitt.lewagon.com/placeholder/users/cveneziani" alt="">
+    <a class="img-card" href="">
+      <%= cl_image_tag @user.avatar_photo.key, height: 100, width: 100, crop: :fill %>
+    </a>
     <div class="user-text py-2">
       <h2><%= @user.name.capitalize %></h2>
       <p><%= @user.job_title %></p>
