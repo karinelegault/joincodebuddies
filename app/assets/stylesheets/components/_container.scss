@@ -102,6 +102,12 @@ hr {
 
 }
 
+.project-container-section2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 60px;
+}
+
 
 
 .project-show-container {

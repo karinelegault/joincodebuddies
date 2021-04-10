@@ -1,6 +1,5 @@
 .container-user-info-dashboard {
-  box-shadow: 0px 0px 10px rgba(0, 0, 1, 0.089);
-  border-radius: 10px;
+  // box-shadow: 0px 0px 10px rgba(0, 0, 1, 0.089);
   padding: 0 3px;
 
 }
@@ -25,7 +24,9 @@
 
 .project-side {
   width: 75%;
-  
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 1, 0.089);
+
 }
 
 .first-section {
@@ -71,6 +72,9 @@
 .project-side-profile {
   width: 75%;
   margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 1, 0.089);
+
 }
 
 table {
