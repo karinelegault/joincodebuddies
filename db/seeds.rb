@@ -54,12 +54,12 @@ users.each do |user|
 end
 
 file1 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1617665374/firmbee-com-gcsNOsPEXfs-unsplash_jpetwl.jpg')
-project1 = Project.create!(user_id: "#{rand(1..3)}", name: "Notes inc", description: "I would like to create a software to take notes during meeting. The idea would be the have visual elements to make it visible at all time.", chatroom_link: "www.google.com", teammates: [2,3], status: "idea" )
+project1 = Project.create!(user_id: "#{rand(1..3)}", name: "Notes inc", description: "I would like to create a software to take notes during meeting. The idea would be the have visual elements to make it visible at all time.", chatroom_link: "www.google.com", teammates: [2,3], status: "finished" )
 project1.photo.attach(io: file1, filename: 'nes.jpg', content_type: 'image/jpg')
 chatroom = Chatroom.create!(user_id: 1, project_id: 1, name: "mychatroom")
 
 file2 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1617665518/sigmund-4UGmm3WRUoQ-unsplash_yxbehu.jpg')
-project2 = Project.create!(user_id: "#{rand(1..3)}", name: "Formation hub for designers", description: "The idea would be to create a hub in order to display formation available for designer towards different rooms.", chatroom_link: "www.google.com", teammates: [2,3], status: "idea" )
+project2 = Project.create!(user_id: "#{rand(1..3)}", name: "Formation hub for designers", description: "The idea would be to create a hub in order to display formation available for designer towards different rooms.", chatroom_link: "www.google.com", teammates: [2,3], status: "finished" )
 project2.photo.attach(io: file2, filename: 'nes.jpg', content_type: 'image/jpg')
 chatroom = Chatroom.create!(user_id: 2, project_id: 2, name: "mychatroom")
 

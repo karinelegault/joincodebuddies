@@ -9,14 +9,6 @@
     </div>
 
 
-    <h1><%= @project.name %></h1>
-        <%= link_to "Request to Join", project_join_request_path(@project)  %>
-    <p><%= @project.description %></p>
-    <% @chatroom = @project.chatroom %>
-    <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom)  %>
-    <%= link_to "Back to projects", root_path, class: "btn-gradient"  %>
-    <%= link_to "Go see", projects_path(@project)  %>
-    
 
 <script>  
     document.getElementByClassName("alert ").fadeOut(3000);
@@ -34,6 +26,20 @@
                 <% @chatroom = @project.chatroom %>
           <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom), class: "create-project "  %>
           <%= link_to "Back to projects", root_path, class: "create-project ml-2"  %>
+          <div class="dropdown">
+          <% button_color =  case @project.status %>
+          <% when "finished" %>
+            <% "btn-success" %>
+          <% when "idea" %>
+            <% "btn-warning" %>
+          <% end %>
+            <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= @project.status %>
+            </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="dropdown-item "><%= link_to "Mark as finished", finished_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
+            <button class="dropdown-item "><%= link_to "Mark as idea", idea_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
+          </div>
       </div>
       <br>
       <p class="p-font"><%= @project.description %></p>

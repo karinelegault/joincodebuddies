@@ -82,56 +82,62 @@
       <p class="p-font">Our members join a team, started working and created their dream product.</p>
     </div>
   </div>
-</div>
-    <div class="col-4">
-      <div class="card project-finish">
-        <a class="img-card" href="">
-          <i id="fas" class="fas fa-heart"></i>
-          <img id="card-img"
-            src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
-        </a>
-        <a href="">
-        </a>
-        <div class="card-content text-center p-3">
-          <h2 class="card-title">
-            <a href="">
-              Pups
+  </div>
+    <% @finished_projects.each do |project| %>
+        <div class="col-4">
+        <% @project = project %>
+          <div class="card project-finish">
+            <a class="img-card" href="">
+              <i id="fas" class="fas fa-heart"></i>
+              <img id="card-img"
+                src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
             </a>
-          </h2>
-          <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odio iure, dolore maxime voluptatum
-            ex inventore nihil tempora magni, asperiores nam ipsam debitis odit facere!</p>
-        </div>
-        <div class="card-read-more pt-2">
-          <div class="card-footer-bottom d-flex justify-content-around py-2">
-            <div class="avatar-all">
-              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-              <div class="avatar-text h2-font"style="font-size:20px">Gad</div>
-              <p style="font-size:12px">Montreal</p>
+            <a href="">
+            </a>
+            <div class="card-content text-center p-3">
+              <h2 class="card-title">
+                <a href="">
+                  <%= @project.name %>
+                </a>
+              </h2>
+              <p class=""><%= @project.description %></p>
             </div>
+            <% teammate_ids = @project.teammates %>
+            <% teammate_ids.each do |teammate_id| %>
+            <% teammate = User.find_by(id: teammate_id) %>
+              <div class="card-read-more pt-2">
+                <div class="card-footer-bottom d-flex justify-content-around py-2">
+                  <div class="avatar-all">
+                    <%= teammate.avatar_photo.key %>
+                    <div class="avatar-text h2-font"style="font-size:20px">Gad</div>
+                    <p style="font-size:12px">Montreal</p>
+                  </div>
 
-            <div class="avatar-all">
-              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-              <div class="avatar-text h2-font"style="font-size:20px">Karine</div>
-              <p style="font-size:12px">Montreal</p>
+                  <div class="avatar-all">
+                    <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+                    <div class="avatar-text h2-font"style="font-size:20px">Karine</div>
+                    <p style="font-size:12px">Montreal</p>
 
-            </div>
-            <div class="avatar-all">
-              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-              <div class="avatar-text h2-font" style="font-size:20px">Pascal</div>
-              <p style="font-size:12px">Montreal</p>
+                  </div>
+                  <div class="avatar-all">
+                    <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+                    <div class="avatar-text h2-font" style="font-size:20px">Pascal</div>
+                    <p style="font-size:12px">Montreal</p>
+                  </div>
+                </div>
+                <hr>
+              </div>
+            <% end %>
+            <div class="detail-footer">
+              <a href="">
+                <div class="p-font-info details"><%= link_to  "Details", project_path(@project) %></div>
+              </a>
             </div>
           </div>
-          <hr>
-        </div>
-        <div class="detail-footer">
-          <a href="">
-            <div class="p-font-info details">Details</div>
-          </a>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
-</div>
 
 <br>
 <hr>
