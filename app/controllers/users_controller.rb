@@ -6,7 +6,6 @@ class UsersController < ApplicationController
             # raise
           else
             @users = User.all
-
             @markers = @users.map do |user|
               {
                 lat: user.latitude,

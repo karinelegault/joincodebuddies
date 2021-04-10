@@ -147,28 +147,17 @@
   </div>
   <div class="container avatar-section mb-5 mt-4">
     <div class="avatar-container">
-      <div class="avatar-all ">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-        <div class="avatar-text h2-font">Neo</div>
-        <div class="p-font">Montreal</div>
+      <% @users.each do |user| %>
+      <div class="avatar-all">
+        <a class="" href="">
+        <%= cl_image_tag user.avatar_photo.key, height: 50, width: 50, crop: :fill, class: "avatar" %>
+        </a>
+        <div class="avatar-text h2-font"><%= user.name.capitalize %></div>
+        <div class="p-font"><%= user.city %></div>
       </div>
-      <div class="avatar-all ">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-        <div class="avatar-text h2-font">Karine</div>
-        <div class="p-font">Toronto</div>
-      </div>
-      <div class="avatar-all ">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-        <div class="avatar-text h2-font">Gad</div>
-        <div class="p-font">Vancouver</div>
-      </div>
-      <div class="avatar-all ">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-        <div class="avatar-text h2-font">Pascal</div>
-        <div class="p-font">Edmonton</div>
-      </div>
-
+      <% end %>
     </div>
+
   </div>
 </div>
 
@@ -229,7 +218,7 @@
        <li class="logogrid__item">
       <img src="https://www.qualified.io/shared/images/codewars-black-large-24a9d355.png" class="logogrid__img" alt="Spotify">
     </li>
-   
+
 
   </ul>
 

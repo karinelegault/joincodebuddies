@@ -5,7 +5,8 @@
       <p class="p-font">Find your team</p>
     </div>
   </div>
-  <hr>
+  <br>
+  <br>
 
   <div class="container">
     <div class="text-comunity text-center">
@@ -26,7 +27,7 @@
       </div>
   </div>
 
-  
+
   <div class="container p-5 bg-white map-container mt-5 d-flex">
     <div id="map"
       style="width: 100%; height: 600px;"
@@ -34,49 +35,17 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
     <div class="profile-container  bg-white p-5">
-      
+      <% @users.each do |user| %>
       <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
+        <a class="" href="">
+        <%= cl_image_tag user.avatar_photo.key, height: 50, width: 50, crop: :fill, class: "avatar" %>
+        </a>
+        <div class="avatar-text h2-font"><%= user.name.capitalize %></div>
+        <div class="p-font"><%= user.city %></div>
       </div>
-        <div class="avatar-all">
-          <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-          <div class="avatar-text h2-font">Neo</div>
-        <div class="p-font">Montreal</div>
-      </div>
-      <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
+      <% end %>
   </div>
-    
+
   </div>
 
   <br>
@@ -120,7 +89,6 @@
 </div>
 
 <br>
-<hr>
 <br>
 
 
