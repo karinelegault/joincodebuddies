@@ -42,7 +42,7 @@ filejohn = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v16180671
 john = User.create!(name: "john", email: "john@email.com", password: "123456", city: "Laval, Qc", job_title: "Backend Developper")
 john.avatar_photo.attach(io: filejohn, filename: 'nes.jpg', content_type: 'image/jpg')
 filekim = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067106/matheus-ferrero-W7b3eDUb_2I-unsplash_fq6oi1.jpg')
-kim = User.create!(name: "kim", email: "kim@email.com", password: "123456", city: "Vancouver", job_title: "Backend Developper")
+kim = User.create!(name: "kim", email: "kim@email.com", password: "123456", city: "Laval, Qc", job_title: "Backend Developper")
 kim.avatar_photo.attach(io: filekim, filename: 'nes.jpg', content_type: 'image/jpg')
 filerose = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067772/tamara-bellis-JoKS3XweV50-unsplash_yp54jj.jpg')
 rose = User.create!(name: "rose", email: "rose@email.com", password: "123456", city: "Sherbrooke", job_title: "Frontend Developper")
