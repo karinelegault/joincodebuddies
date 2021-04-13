@@ -1,94 +1,3 @@
-<% if false %>
-<% if !@incoming_requests.nil? %>
-<h2>My ideas</h2>
-<table>
-  <tr>
-    <th>Project photo</th>
-    <th>Project name</th>
-    <th>Status</th>
-  </tr>
-
-</table>
-<% end %>
-
-
-<% if !@incoming_requests.nil? %>
-<h2>Requests from members</h2>
-<table>
-  <tr>
-    <th>Project photo</th>
-    <th>Project name</th>
-    <th>Requested by:</th>
-    <th>Status</th>
-  </tr>
-    <% @incoming_requests.each do |request| %>
-    <tr>
-      <td><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%></td>
-      <td><%= request.project.name %></td>
-      <td><%= cl_image_tag(request.user.avatar_photo.key, class: "avatar", height: 40, width: 40, crop: :fill) %><br><%= request.user.email %></td>
-      <td>
-        <div class="dropdown">
-          <% button_color =  case request.status %>
-          <% when "accepted" %>
-            <% "btn-success" %>
-          <% when "declined" %>
-            <% "btn-danger" %>
-          <% when "pending" %>
-            <% "btn-secondary" %>
-          <% end %>
-            <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= request.status %>
-            </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <button class="dropdown-item "><%= link_to "accept request", accept_requests_path(request), method: :patch,  class: "dropdown-item " %></button>
-            <button class="dropdown-item "><%= link_to "deny request", deny_requests_path(request), method: :patch, class: "dropdown-item "%></button>
-          </div>
-        </div>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<br>
-<br>
-<br>
-
-<% if !@outgoing_requests.nil? %>
-<h2>My Projects</h2>
-<table>
-  <tr>
-    <th>Project photo</th>
-    <th>Project name</th>
-    <th>Status</th>
-  </tr>
-
-    <% @outgoing_requests.each do |request| %>
-    <tr>
-      <td><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%></td>
-      <td><%= request.project.name %></td>
-      <td>
-        <div class="dropdown">
-          <% button_color =  case request.status %>
-          <% when "accepted" %>
-            <% "btn-success" %>
-          <% when "declined" %>
-            <% "btn-danger" %>
-          <% when "pending" %>
-            <% "btn-secondary" %>
-          <% end %>
-            <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= request.status %>
-            </button>
-
-        </div>
-      </td>
-    </tr>
-  <% end %>
-</table>
-<% end %>
-<% end %>
-
-<% end %>
 
 
 
@@ -112,11 +21,12 @@
     <div class="user-stack text-center">
       <br>
       <h3>My Skills</h3>
-        <div class="grid">
+      <div class="grid-dashboard">
           <% @user.skills.to_a.each do |user_skill| %>
-          <p><%= user_skill.name %></p>
-        </div>
+          <p class="p-font" id="skills-dashboard"><%= user_skill.name %></p>
+     
         <% end %>
+      </div>
     <hr>
     </div>
     <div class="icons d-flex">

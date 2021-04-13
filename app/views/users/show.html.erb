@@ -20,9 +20,9 @@
     <div class="user-stack text-center">
       <br>
       <h3>My Skills</h3>
-        <div class="grid">
+        <div class="grid-dashboard">
           <% @user.skills.to_a.each do |user_skill| %>
-          <p><%= user_skill.name %></p>
+          <p class="p-font" id="skills-dashboard"><%= user_skill.name %></p>
           <% end %>
         </div>
     <hr>
