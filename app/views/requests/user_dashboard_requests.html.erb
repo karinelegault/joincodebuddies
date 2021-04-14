@@ -51,7 +51,7 @@
           <% @incoming_requests.each do |request| %>
           <tr>
             <%# <td class="img-project"><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%>
-            <td><%= cl_image_tag(request.user.avatar_photo.key, class: "avatar", height: 40, width: 40, crop: :fill) %><br><%= request.user.name %></td>
+            <td><%= cl_image_tag(request.user.avatar_photo.key, class: "avatar avatar-dashboard", height: 40, width: 40, crop: :fill) %><%= request.user.name %></td>
             <td><p class="p-font"><%= request.project.name %></p></td>
             <td>
             <% @project = request.project %>
@@ -101,7 +101,7 @@
         <h2 class="h2-font my-3">My Projects</h2>
     <div class="second-section">
       <% if !@outgoing_requests.nil? %>
-        <table>
+        <table class="my-3">
           <tr>
             <%# <th>Project photo</th> %>
             <th>Project name</th>
@@ -110,11 +110,12 @@
           </tr>
 
             <% @outgoing_requests.each do |request| %>
-            <tr>
+            <tr class="table-row-dashboard">
               <%# <td><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%>
               <td><p class="p-font"><%= request.project.name %></p></td>
               <td><p><%= request.status %></p></td>
               <td>
+          
                 <div class="dropdown">
                   <% button_color =  case request.status %>
                   <% when "accepted" %>
@@ -127,6 +128,7 @@
                     <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= request.status %>
                     </button>
+                  
                 </div>
               </td>
             </tr>
