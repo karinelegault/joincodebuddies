@@ -5,7 +5,8 @@
       <p class="p-font">Find your team</p>
     </div>
   </div>
-  <hr>
+  <br>
+  <br>
 
   <div class="container">
     <div class="text-comunity text-center">
@@ -26,7 +27,7 @@
       </div>
   </div>
 
-  
+
   <div class="container p-5 bg-white map-container mt-5 d-flex">
     <div id="map"
       style="width: 100%; height: 600px;"
@@ -34,49 +35,17 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
     <div class="profile-container  bg-white p-5">
-      
+      <% @users.each do |user| %>
       <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
+        <a class="" href="">
+        <%= cl_image_tag user.avatar_photo.key, height: 50, width: 50, crop: :fill, class: "avatar" %>
+        </a>
+        <div class="avatar-text h2-font"><%= user.name.capitalize %></div>
+        <div class="p-font"><%= user.city %></div>
       </div>
-        <div class="avatar-all">
-          <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-          <div class="avatar-text h2-font">Neo</div>
-        <div class="p-font">Montreal</div>
-      </div>
-      <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
-    <div class="avatar-all">
-        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" /> 
-        <div class="avatar-text h2-font">Neo</div>
-      <div class="p-font">Montreal</div>
-    </div>
+      <% end %>
   </div>
-    
+
   </div>
 
   <br>
@@ -93,34 +62,35 @@
   <div class="right-area">
     <div class="container form-container-banner-signup">
   <form>
+    <%= simple_form_for :user do |f| %>
     <div class="text-area text-center">
       <h2>Create account</h2>
-      <p>Already have an account? <span>Sign in</span></p>
+      <p>Already have an account? <span><%= link_to "Login", new_user_session_path%></span></p>
     </div>
     <div class="form-row">
       <div class="col-12">
-        <input type="text" class="form-control" placeholder="Username">
+        <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "email" %>
       </div>
       <div class="col-6">
-        <input type="text" class="form-control" placeholder="First name">
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "password" %>
       </div>
       <div class="col-6">
-        <input type="text" class="form-control" placeholder="Last name">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "password" %>
       </div>
       <div class="col-12">
-        <input type="text" class="form-control" placeholder="Email">
+        <%= f.input :avatar_photo, as: :file %>
       </div>
     </div>
     <div class="sign-up-form-btn">
-      <div class="p-font sign-up-form">Sign up</div>
+      <div class="p-font sign-up-form"><%= f.submit "Sign up", class: "p-font sign-up-form" %></div>
     </div>
+    <% end %>
   </form>
  </div>
   </div>
 </div>
 
 <br>
-<hr>
 <br>
 
 

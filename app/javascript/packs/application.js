@@ -12,10 +12,11 @@ import { initChatroomCable } from '../channels/chatroom_channel';
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initVideoCall } from "../video_call/daily";
+import {reloadFunction} from "../reload_button/button_reload";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-})
+});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -26,6 +27,8 @@ document.addEventListener('turbolinks:load', () => {
 
 document.addEventListener("turbolinks:load", () => {
     initChatroomCable()
+    // reloadFunction()
     // Call daily code in there
     initVideoCall()
 });
+

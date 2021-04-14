@@ -1,8 +1,123 @@
-<div class="container">
-  <%= simple_form_for(@project) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+
+<div class="wrapper ">
+  <div class="creation ">
+    <div class="starting m-5">
+      <h1 class="h1-font mb-3">Welcome</h1>
+      <p class="p-font mb-4">Share your idea, careata a project, start working</p>
+      <a href="#section0" class="btn btn-dark">Start</a>
+  
+    </div>
+      <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <div class="question1 m-5" id="section0">
+          <%= simple_form_for(@project) do |f| %>
+            <h2 class="h1-font mb-4"><%= f.input :name %></h2>
+            <a href="#section1" class="btn btn-dark">Next</a>
+          <% end %>
+        </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+        <div class="question2 m-5" id="section1">
+          <%= simple_form_for(@project) do |f| %>
+            <h2 class="h1-font"><%= f.input :description %></h2>
+            <a href="#section2 " class="btn btn-dark">Next</a>
+
+          <% end %>
+        </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <div class="question3 m-5" id="section2">
+          <%= simple_form_for(@project) do |f| %>
+          <%= f.input :photo, as: :file %>
+            <%= f.submit class: "btn btn-dark" %>
+          <% end %>
+        </div>
+  </div>
 </div>

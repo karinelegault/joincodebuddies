@@ -1,34 +1,139 @@
-<br>
-<br>
 
-<div class="container container-user-info">
-  <div class="user-info d-flex my-3">
-    <img src="https://kitt.lewagon.com/placeholder/users/cveneziani" alt="">
-    <div class="user-text py-2">
-      <h2><%= @user.name.capitalize %></h2>
-      <p><%= @user.job_title %></p>
-      <p class="location mr-2"><%= @user.city %></p>
-    </div>
-  </div>
-    <div class="projects-user d-flex">
-    <a href="">
-        <div class=""><%= link_to "Create Project", new_project_path, class: "p-font create-project" %></div>
-    </a>
-    </div>
-  <div class="user-stack text-center">
-    <br>
-    <h3>My Skills</h3>
-      <div class="grid">
-        <% @user.skills.to_a.each do |user_skill| %>
-        <p><%= user_skill.name %></p>
+
+<div class="container container-user-info-dashboard p-3 d-flex  mt-5">
+  <div class="user-side ">
+    <div class="user-info d-flex my-3">
+      <a class="img-card-dashboard" href="">
+        <%= cl_image_tag @user.avatar_photo.key, height: 100, width: 100, crop: :fill %>
+      </a>
+      <div class="user-text py-2">
+        <h2><%= @user.name.capitalize %></h2>
+        <p><%= @user.job_title %></p>
+        <p class="location ">Location: <span><%= @user.city %></span> </p>
       </div>
-      <% end %>
-  <hr>
+    </div>
+      <div class="projects-user d-flex">
+      <a href="">
+          <div class=""><%= link_to "Create Project", new_project_path, class: "p-font create-project" %></div>
+      </a>
+      </div>
+    <div class="user-stack text-center">
+      <br>
+      <h3>My Skills</h3>
+        <div class="grid-dashboard">
+          <% @user.skills.to_a.each do |user_skill| %>
+          <p class="p-font" id="skills-dashboard"><%= user_skill.name %></p>
+          <% end %>
+        </div>
+    <hr>
+    </div>
+    <div class="icons d-flex">
+      <div class="email-icon"><i class="far fa-envelope"></i></div>
+      <div class="copy-icon"><i class="fas fa-link"></i></div>
+    </div>
   </div>
-  <div class="icons d-flex">
-    <div class="email-icon"><i class="far fa-envelope"></i></div>
-    <div class="copy-icon"><i class="fas fa-link"></i></div>
+
+  <%# Right Side %>
+  <div class="project-side-profile  bg-white p-5 ml-2 ">
+    <h2 class="h2-font mx-3">Projects:</h2>
+      <div class="my-projects-container">
+        <div class="card project-finish">
+        <a class="img-card" href="">
+          <i id="fas" class="fas fa-heart"></i>
+          <img id="card-img"
+            src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
+        </a>
+        <a href="">
+        </a>
+        <div class="card-content text-center p-3">
+          <h2 class="card-title">
+            <a href="">
+              Pups
+            </a>
+          </h2>
+          <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odio iure, dolore maxime voluptatum
+            ex inventore nihil tempora magni, asperiores nam ipsam debitis odit facere!</p>
+        </div>
+        <div class="card-read-more pt-2">
+          <div class="card-footer-bottom d-flex justify-content-around py-2">
+            <div class="avatar-all">
+              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="avatar-text h2-font"style="font-size:20px">Gad</div>
+              <p style="font-size:12px">Montreal</p>
+            </div>
+
+            <div class="avatar-all">
+              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="avatar-text h2-font"style="font-size:20px">Karine</div>
+              <p style="font-size:12px">Montreal</p>
+
+            </div>
+            <div class="avatar-all">
+              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="avatar-text h2-font" style="font-size:20px">Pascal</div>
+              <p style="font-size:12px">Montreal</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="detail-footer">
+          <a href="">
+            <div class="p-font-info details">Details</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="card project-finish">
+        <a class="img-card" href="">
+          <i id="fas" class="fas fa-heart"></i>
+          <img id="card-img"
+            src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
+        </a>
+        <a href="">
+        </a>
+        <div class="card-content text-center p-3">
+          <h2 class="card-title">
+            <a href="">
+              Pups
+            </a>
+          </h2>
+          <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id odio iure, dolore maxime voluptatum
+            ex inventore nihil tempora magni, asperiores nam ipsam debitis odit facere!</p>
+        </div>
+        <div class="card-read-more pt-2">
+          <div class="card-footer-bottom d-flex justify-content-around py-2">
+            <div class="avatar-all">
+              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="avatar-text h2-font"style="font-size:20px">Gad</div>
+              <p style="font-size:12px">Montreal</p>
+            </div>
+
+            <div class="avatar-all">
+              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="avatar-text h2-font"style="font-size:20px">Karine</div>
+              <p style="font-size:12px">Montreal</p>
+
+            </div>
+            <div class="avatar-all">
+              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+              <div class="avatar-text h2-font" style="font-size:20px">Pascal</div>
+              <p style="font-size:12px">Montreal</p>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="detail-footer">
+          <a href="">
+            <div class="p-font-info details">Details</div>
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+
   </div>
+
 </div>
 
 <br>

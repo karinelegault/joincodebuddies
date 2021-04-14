@@ -22,7 +22,7 @@
               <% if current_user.avatar_photo.attached? %>
 
               <div class="avatar-menu dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= cl_image_tag current_user.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%></div>
+              <%= cl_image_tag current_user.avatar_photo.key, height: 35, width: 35, crop: :fill, class: "avatar-menu"%></div>
 
             <% else %>
               <%= cl_image_tag("https://res.cloudinary.com/drlbljn6y/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1615303526/michael-dam-mEZ3PoFGs_k-unsplash_byqvkv.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
@@ -43,6 +43,7 @@
             <li class="nav-item h1-mobile">
               <%= link_to "Community", users_path, class: "nav-link" %>
             </li>
+
             <li class="nav-item h1-mobile nav-special">
               <%= link_to "How it works", "#", class: "nav-link" %>
             </li>
