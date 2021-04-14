@@ -20,14 +20,21 @@
   <div class="card-product">
     <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-product-infos ml-3">
-      <h1 class="h2-font"><%= @project.name %></h1>
-      <div class="btn-links d-flex align-items-center">
-        <%= link_to "Join", project_join_request_path(@project), class: "join mr-1"  %>
-          <% @chatroom = @project.chatroom %>
-          <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom), class: "create-project "  %>
-          <%= link_to "Back to projects", root_path, class: "create-project ml-2"  %>
-          
-       
+
+      <h2 class="h2-font mb-3"><%= @project.name %></h2>
+      <div class="btn-links">
+        <div class="links-project d-flex">
+          <%= link_to "Join", project_join_request_path(@project), class: "join mr-1"  %>
+                  <% @chatroom = @project.chatroom %>
+            
+              
+            
+        </div>
+        
+
+        
+      </div>
+
       <br>
       <p class="p-font"><%= @project.description %></p>
       <br><br>
@@ -52,6 +59,6 @@
           </div>
       </div>
     </div>
-  </div>
+   </div>
 
 </div>
