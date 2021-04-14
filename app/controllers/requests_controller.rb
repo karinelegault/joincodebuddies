@@ -60,6 +60,7 @@ class RequestsController < ApplicationController
       my_requests = projects.map { |project| project.requests }
       @incoming_requests = my_requests.flatten
       @outgoing_requests = Request.where(user_id: current_user.id)
+      
     end
 
     private
