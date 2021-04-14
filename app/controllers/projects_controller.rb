@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
     def index
-      # raise
+      @finished_projects = Project.where(status: "finished")
       @user = current_user
         if params[:q].present?
 
