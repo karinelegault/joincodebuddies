@@ -54,21 +54,42 @@
             <td><%= cl_image_tag(request.user.avatar_photo.key, class: "avatar", height: 40, width: 40, crop: :fill) %><br><%= request.user.name %></td>
             <td><p class="p-font"><%= request.project.name %></p></td>
             <td>
-              <div class="dropdown">
-                <% button_color =  case request.status %>
+            <% @project = request.project %>
+            <% @chatroom = @project.chatroom  %>
+             <% button_color =  case request.status %>
                 <% when "accepted" %>
                   <% "btn-success" %>
-                <% when "declined" %>
+                <% when "denied" %>
                   <% "btn-danger" %>
                 <% when "pending" %>
                   <% "btn-secondary" %>
                 <% end %>
-                  <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="btn-group">
+                <button type="button" class="btn <%= button_color %> dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <%= request.status %>
+                </button>
+                <div class="dropdown-menu">
+                  <button class="dropdown-item "><%= link_to "Accept", accept_requests_path(request), method: :patch,  class: "dropdown-item " %></button>
+                  <button class="dropdown-item "><%= link_to "Decline", deny_requests_path(request), method: :patch, class: "dropdown-item "%></button>
+              </div>
+            </td>
+            <td>
+             <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom), class: "create-project "  %>
+            </td>
+            <td>
+              <div class="dropdown">
+                <% button_status_color =  case @project.status %>
+                <% when "finished" %>
+                  <% "btn-success" %>
+                <% when "idea" %>
+                  <% "btn-warning" %>
+                <% end %>
+                  <button class="btn <%= button_status_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= @project.status %>
                   </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <button class="dropdown-item "><%= link_to "accept request", accept_requests_path(request), method: :patch,  class: "dropdown-item " %></button>
-                  <button class="dropdown-item "><%= link_to "deny request", deny_requests_path(request), method: :patch, class: "dropdown-item "%></button>
+                  <button class="dropdown-item "><%= link_to "Mark as finished", finished_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
+                  <button class="dropdown-item "><%= link_to "Mark as idea", idea_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
                 </div>
               </div>
             </td>
