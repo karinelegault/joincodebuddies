@@ -4,28 +4,21 @@
     <div class="chatroom-card text-center">
       <div class="edit-icon"><i class="fas fa-pencil-alt"></i></div>
       <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="">
-      <h2 class="h2-font p-3">Project Name</h2>
-      <p class="p-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor asperiores eveniet in saepe corrupti fugit neque, architecto ipsam vitae eius.</p>
+      <h2 class="h2-font p-3"><%= @chatroom.project.name %></h2>
+      <p class="p-font"><%= @chatroom.project.description %></p>
     </div>
     <%# MEMBER SECTION %>
     <div class="members text-center">
       <h2 class="h2-font mb-3">Members</h2>
-      <div class="members-section">      
-        <div class="avatar-all">
-          <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-          <div class="avatar-text h2-font">Neo</div>
-          <div class="p-font">Montreal</div>
-        </div>
-        <div class="avatar-all">
-          <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-          <div class="avatar-text h2-font">Neo</div>
-          <div class="p-font">Montreal</div>
-        </div>
-        <div class="avatar-all">
-          <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-          <div class="avatar-text h2-font">Neo</div>
-          <div class="p-font">Montreal</div>
-        </div>
+      <div class="members-section">
+      <div class="">
+          <% teammate_ids = @chatroom.project.teammates %>
+                <% teammate_ids.each do |teammate_id| %>
+                <% teammate = User.find_by(id: teammate_id) %>
+               <%= cl_image_tag teammate.avatar_photo.key, height: 20, width: 20, crop: :scale, class: "avatar-menu"%>
+              <div class=""><%= teammate.name.capitalize %></div>
+            </div>
+          <% end %>
       </div>
     </div>
     <hr>
@@ -45,14 +38,14 @@
       <% @chatroom.messages.each do |message| %>
         <div class="message-container d-flex" id="message-<%= message.id %>">
           <i class="author d-flex align-center">
-            <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani"  />   
+            <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani"  />
              <div class="chat-text d-flex align-items-center">
                 <p><%= message.content %></p>
             </div>
           </i>
         </div>
     <% end %>
-    
+
     <%# CHATROOM BOX SECTION %>
   </div>
       <div class="chat-box">
