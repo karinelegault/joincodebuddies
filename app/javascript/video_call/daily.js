@@ -11,7 +11,9 @@ const initChatroomCable = () => {
       });
     }
 }
-  
+
+
+
 let callFrame = () => {
     callFrame = window.DailyIframe.createFrame();
     callFrame.join({ url: 'https://codebuddies.daily.co/Test'});
@@ -25,5 +27,11 @@ const initVideoCall = () => {
     });
 };
 
+const initEndVideoCall = () => {
+  const callButton = document.getElementById("callbutton");
+  callButton.addEventListener("click", (event) => {
+      callFrame()
+  });
+};
 
-export {initVideoCall}
+export {initVideoCall, initEndVideoCall}

@@ -20,6 +20,7 @@
   <div class="card-product">
     <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-product-infos ml-3">
+
       <h2 class="h2-font mb-3"><%= @project.name %></h2>
       <div class="btn-links">
         <div class="links-project d-flex">
@@ -33,6 +34,7 @@
 
         
       </div>
+
       <br>
       <p class="p-font"><%= @project.description %></p>
       <br><br>
