@@ -34,11 +34,13 @@ class RequestsController < ApplicationController
         @user = User.find(@request.user_id)
         @project.teammates << @user.id
         @project.save
+        @request.save
     end
 
     def deny_requests
         @request = Request.find(params[:id])
         @request.status = "denied"
+        @request.save
     end
 
     def components
