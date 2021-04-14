@@ -61,6 +61,13 @@
     margin: 3px 10px;
     border-top: 1px solid #D4D4D4;
   }
+
+  .card-read-more-projects{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
   .card-read-more a {
     text-decoration: none !important;
     padding:10px;
@@ -106,11 +113,11 @@
 
 #fas {
   position: absolute;
-  z-index: 1;
-  top: 14px;
-  left: 289px;
-  color: white;
-  font-size: 40px;
+    z-index: 1;
+    top: 14px;
+    left: 283px;
+    color: rgb(219, 60, 60);
+    font-size: 27px;
 }
 
 
