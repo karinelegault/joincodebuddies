@@ -29,3 +29,4 @@ document.addEventListener("turbolinks:load", () => {
     // Call daily code in there
     initVideoCall()
 });
+

@@ -20,26 +20,18 @@
   <div class="card-product">
     <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-product-infos ml-3">
-      <h1 class="h2-font"><%= @project.name %></h1>
-      <div class="btn-links d-flex align-items-center">
-        <%= link_to "Join", project_join_request_path(@project), class: "join mr-1"  %>
-                <% @chatroom = @project.chatroom %>
-          <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom), class: "create-project "  %>
-          <%= link_to "Back to projects", root_path, class: "create-project ml-2"  %>
-          <div class="dropdown">
-          <% button_color =  case @project.status %>
-          <% when "finished" %>
-            <% "btn-success" %>
-          <% when "idea" %>
-            <% "btn-warning" %>
-          <% end %>
-            <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= @project.status %>
-            </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <button class="dropdown-item "><%= link_to "Mark as finished", finished_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
-            <button class="dropdown-item "><%= link_to "Mark as idea", idea_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
-          </div>
+      <h2 class="h2-font mb-3"><%= @project.name %></h2>
+      <div class="btn-links">
+        <div class="links-project d-flex">
+          <%= link_to "Join", project_join_request_path(@project), class: "join mr-1"  %>
+                  <% @chatroom = @project.chatroom %>
+            
+              
+            
+        </div>
+        
+
+        
       </div>
       <br>
       <p class="p-font"><%= @project.description %></p>
@@ -65,6 +57,6 @@
           </div>
       </div>
     </div>
-  </div>
+   </div>
 
 </div>
