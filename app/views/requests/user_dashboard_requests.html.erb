@@ -24,7 +24,7 @@
       <div class="grid-dashboard">
           <% @user.skills.to_a.each do |user_skill| %>
           <p class="p-font" id="skills-dashboard"><%= user_skill.name %></p>
-     
+
         <% end %>
       </div>
     <hr>
@@ -69,8 +69,8 @@
                   <%= request.status %>
                 </button>
                 <div class="dropdown-menu">
-                  <button class="dropdown-item "><%= link_to "Accept", accept_requests_path(request), method: :patch,  class: "dropdown-item " %></button>
-                  <button class="dropdown-item "><%= link_to "Decline", deny_requests_path(request), method: :patch, class: "dropdown-item "%></button>
+                  <button class="dropdown-item "><%= link_to "Accept", accept_requests_path(request), method: :post, remote: true,  class: "dropdown-item " %></button>
+                  <button class="dropdown-item "><%= link_to "Decline", deny_requests_path(request), method: :post, remote: true, class: "dropdown-item "%></button>
               </div>
             </td>
             <td>
@@ -115,7 +115,7 @@
               <td><p class="p-font"><%= request.project.name %></p></td>
               <td><p><%= request.status %></p></td>
               <td>
-          
+
                 <div class="dropdown">
                   <% button_color =  case request.status %>
                   <% when "accepted" %>
@@ -128,7 +128,7 @@
                     <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= request.status %>
                     </button>
-                  
+
                 </div>
               </td>
             </tr>
