@@ -1,0 +1,35 @@
+// Place all the styles related to the howitworks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.section-one {
+  margin: 0 50px;
+}
+
+#howitworks_img {
+  width: 600px;
+  height: 350px;
+}
+
+.howitworks_row {
+  align-items: center;
+}
+
+#howitworks_banner_img {
+  // border-radius: 50px 0 0 50px;
+  object-fit: cover;
+  margin: 10px;
+
+  
+}
+
+
+.banner-home-howitworks {
+  width: 100%;
+  height: 575px;
+  background-color: white;
+  position: relative;
+}
+
+.project-howitworks {
+  margin: 0;
+}

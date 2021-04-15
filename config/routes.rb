@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :messages, only: :create
     end
     resources :requests, only: [:new, :create, :edit, :update]
-      get ":id/join_request", to: "requests#join_request", as: "join_request"
+      get "join_request", to: "requests#join_request", as: "join_request"
     end
     get "components", to: "requests#components", as: "components"
     get "user_dashboard_requests", to: "requests#user_dashboard_requests", as: "user_dashboard_requests"
@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :skills, only: [:show, :edit, :create]
   end
+    resources :howitworks , only: [:index]
+
 end

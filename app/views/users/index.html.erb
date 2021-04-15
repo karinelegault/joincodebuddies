@@ -1,5 +1,5 @@
   <br>
-  <div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url(https://images.unsplash.com/photo-1528820624198-03cf9845bec0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
+  <div class="banner" style="background-image: linear-gradient(rgba(250,250,250,0.5),rgba(250,250,250,0.5)), url(https://images.unsplash.com/photo-1528820624198-03cf9845bec0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
     <div class="container">
       <h1 class="h1-font">Join the community</h1>
       <p class="p-font">Find your team</p>
@@ -62,14 +62,14 @@
   <div class="right-area">
     <div class="container form-container-banner-signup">
   <form>
-    <%= form_for :user do |f| %>
+    <%= simple_form_for :user do |f| %>
     <div class="text-area text-center">
       <h2>Create account</h2>
       <p>Already have an account? <span><%= link_to "Login", new_user_session_path%></span></p>
     </div>
     <div class="form-row">
       <div class="col-12">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "email" %>
+        <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "email" %>
       </div>
       <div class="col-6">
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "password" %>
@@ -78,7 +78,7 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "password" %>
       </div>
       <div class="col-12">
-
+        <%= f.input :avatar_photo, as: :file %>
       </div>
     </div>
     <div class="sign-up-form-btn">

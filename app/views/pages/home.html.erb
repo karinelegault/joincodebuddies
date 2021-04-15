@@ -73,60 +73,78 @@
 <br>
 
 
-<div class="container project-container bg-white p-4 mb-4">
-  <div class="row">
-<div class="container text-center my-4">
+
+
+  <div class="container text-center">
   <div class="container-project">
     <div class="text-project">
       <h3 class="h3-font">See the final results</h3>
       <p class="p-font">Our members join a team, started working and created their dream product.</p>
-      <%# Code for live finished project data %>
-      <div class="col-4">
-        <% @finished_projects.each do |project| %>
-            <% @project = project %>
-              <div class="card project-finish">
-                <a class="img-card" href="">
-                  <i id="fas" class="fas fa-heart"></i>
-                  <img id="card-img"
-                    src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
-                </a>
-                <a href="">
-                </a>
-                <div class="card-content text-center p-3">
-                  <h2 class="card-title">
-                    <a href="">
-                      <%= @project.name %>
-                    </a>
-                  </h2>
-                  <p class=""><%= @project.description %></p>
-                </div>
-                <% teammate_ids = @project.teammates %>
-                <% teammate_ids.each do |teammate_id| %>
-                <% teammate = User.find_by(id: teammate_id) %>
-                  <div class="card-read-more pt-2">
-                    <div class="card-footer-bottom d-flex justify-content-around py-2">
-                      <div class="avatar-all">
-                        <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%></div>
-                        <div class="avatar-text h2-font"style="font-size:20px"><%= teammate.name %></div>
-                        <p style="font-size:12px"><%= teammate.city %></p>
-                      </div>
-                    </div>
-                <% end %>
-                    <hr>
-                  </div>
-                <div class="detail-footer">
-                  <a href="">
-                    <div class="p-font-info details"><%= link_to  "Details", project_path(@project) %></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
+      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input
+          name="utf8" type="hidden" value="&#x2713;" />
+          <div class="search-form-control form-group mb-5">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i>
+        </button>
+        </div>
+      </form>
     </div>
   </div>
+</div>
+
+<br>
+
+<div class="container project-container-section2 bg-white p-4 mb-4 ">
+  <% @finished_projects.each do |project| %>
+  <div class="row">
+    <div class="">
+      <div class="card project-finish">
+        <a class="img-card" href="">
+          <i id="fas" class="fas fa-heart"></i>
+          <a class="img-card" href="">
+            <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
+          </a>
+        </a>
+        <div class="card-content text-center p-3">
+          <h2 class="card-title">
+            <a href="">
+              <%= project.name.capitalize %>
+            </a>
+          </h2>
+          <p class=""><%= project.description %></p>
+        </div>
+        <div class="card-read-more-projects pt-2">
+          <div class="card-footer-bottom d-flex justify-content-around py-2">
+          <% teammate_ids = project.teammates %>
+                <% teammate_ids.each do |teammate_id| %>
+                <% teammate = User.find_by(id: teammate_id) %>
+               <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>  
+              <div class="avatar-text h2-font m-3"style="font-size:20px"><%= teammate.name %>
+              </div>
+              
+            </div>
+          <% end %>
+         
+            <div class="detail-footer mt-2">
+              <a href="">
+                        
+
+                <div class="p-font-info details">Details</div>
+              </a>
+            </div>
+
+          </div>
+          
+        </div>
+        
+      </div>
+    <% end %>
+    </div>
   </div>
+</div>
+
+
 
 <br>
 <hr>
@@ -213,7 +231,9 @@
        <li class="logogrid__item">
       <img src="https://www.qualified.io/shared/images/codewars-black-large-24a9d355.png" class="logogrid__img" alt="Spotify">
     </li>
-
+    <li class="logogrid__item">
+      <img src="https://www.udemy.com/staticx/udemy/images/v6/default-meta-image.png" class="logogrid__img" alt="Coca Cola">
+    </li>
 
   </ul>
 
@@ -229,14 +249,14 @@
   <div class="right-area">
     <div class="container form-container-banner-signup">
   <form>
-    <%= form_for :user do |f| %>
+    <%= simple_form_for :user do |f| %>
     <div class="text-area text-center">
       <h2>Create account</h2>
       <p>Already have an account? <span><%= link_to "Login", new_user_session_path%></span></p>
     </div>
     <div class="form-row">
       <div class="col-12">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "email" %>
+        <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "email" %>
       </div>
       <div class="col-6">
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "password" %>
@@ -245,7 +265,7 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "password" %>
       </div>
       <div class="col-12">
-
+        <%= f.input :avatar_photo, as: :file %>
       </div>
     </div>
     <div class="sign-up-form-btn">
