@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :skills, only: [:show, :edit, :create]
   end
+    resources :howitworks , only: [:index]
+
 end

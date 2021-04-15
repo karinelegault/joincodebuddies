@@ -1,5 +1,5 @@
 <br>
-<div class="banner" style="background-image: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url(https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(250,250,250,0.5),rgba(250,250,250,0.5)), url(https://images.unsplash.com/photo-1534665482403-a909d0d97c67?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
   <div class="container">
     <h1>Build your ideas</h1>
     <p>See what our teams made</p>
@@ -96,6 +96,25 @@
             <img id="card-img"
               src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80" />
           </a>
+
+        </a>
+        <div class="card-content text-center p-3">
+          <h2 class="card-title">
+            <a href="">
+              <%= project.name.capitalize %>
+            </a>
+          </h2>
+          <p class=""><%= project.description %></p>
+        </div>
+        <div class="card-read-more-projects pt-2">
+          <div class="card-footer-bottom d-flex justify-content-around py-2">
+          <% teammate_ids = project.teammates %>
+                <% teammate_ids.each do |teammate_id| %>
+                <% teammate = User.find_by(id: teammate_id) %>
+               <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>  
+              <div class="avatar-text h2-font m-3"style="font-size:20px"><%= teammate.name %>
+              </div>
+
           <a href="">
           </a>
           <div class="card-content text-center p-3">
@@ -110,6 +129,7 @@
 
             <div class="card-read-more pt-2">
               <div class="card-footer-bottom d-flex justify-content-around py-2">
+
               
                 <div class="avatar-all">
                   <%= cl_image_tag project.user.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%></div> 
@@ -130,6 +150,23 @@
               </div>     
           <% end %> 
             </div>
+
+          <% end %>
+         
+            <div class="detail-footer mt-2">
+              <a href="">
+                <div class="p-font-info details">Details</div>
+              </a>
+            </div>
+
+          </div>
+          
+        </div>
+        
+      </div>
+    <% end %>
+    </div>
+
             <hr>
           </div>
 
@@ -142,6 +179,7 @@
         </div>
       </div>
     <% end %>
+
 
   </div>
 </div>
