@@ -6,3 +6,11 @@
   border-radius: 10px;
 }
 
+.mapboxgl-popup {
+  min-width: 400px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
