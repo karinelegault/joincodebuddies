@@ -40,8 +40,10 @@
         <a class="" href="">
         <%= cl_image_tag user.avatar_photo.key, height: 50, width: 50, crop: :fill, class: "avatar" %>
         </a>
-        <div class="avatar-text h2-font"><%= user.name.capitalize %></div>
-        <div class="p-font"><%= user.city %></div>
+        <div class="avatar-text h2-font"><%= user.name.capitalize %>
+        </div>
+        <div class="p-font"><%= user.city %>
+        </div>
       </div>
       <% end %>
   </div>
