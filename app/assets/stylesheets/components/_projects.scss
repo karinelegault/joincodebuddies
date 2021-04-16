@@ -22,18 +22,32 @@
   margin: 0 100px;
 }
 
+.modal {
+  margin: 140px auto;
+}
+
 .modal-content {
-  background: $lightgreen;
+  background: $white;
   border: 1px solid #ddd;
-  box-shadow: 1px 1px 45px rgb(192, 255, 213)
+  border-radius: 2px;;
+  // box-shadow: 1px 1px 45px rgb(192, 255, 213)
 }
 
 .modal-header {
-  color: white;
+  color: $lightgreen;
+  margin: 0 auto;
 }
 
 .modal-body {
-  color: white;
+  color: $lightgreen;
+  font-size: 34px;
+  margin: 0 auto;
+}
+
+.btn-secondary {
+  margin: 0 auto;
+  background: $yellow;
+  border: none;
 }
 // modal
 

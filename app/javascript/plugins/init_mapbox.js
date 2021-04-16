@@ -44,6 +44,7 @@
 import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
@@ -63,15 +64,24 @@ const initMapbox = () => {
   const markers = JSON.parse(mapElement.dataset.markers);
 
   markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+
     console.log(markers)
     new mapboxgl.Marker()
     .setLngLat([ marker.lng, marker.lat ])
     .addTo(map);
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup) // add this
+      .addTo(map);
   });
   fitMapToMarkers(map, markers);
   
     
   }
+  
 };
+
+
 
 export { initMapbox };

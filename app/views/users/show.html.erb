@@ -38,44 +38,39 @@
   <%# Right Side %>
   <div class="project-side-profile  bg-white p-5 ml-2 ">
     <h2 class="h2-font mx-3">Projects</h2>
-      <div class="my-projects-container">
+      <div class="my-projects-container my-profile">
         <% @projects.each do |project| %>
-      <div class="card project-finish">
-        <a class="img-card" href="">
+        <div class="card project-finish">
+          <a class="img-card" href="">
           <i id="fas" class="fas fa-heart"></i>
           <a class="img-card" href="">
             <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
           </a>
-        </a>
-        <div class="card-content text-center p-3">
-          <h2 class="card-title">
-            <a href="">
-              <%= project.name.capitalize %>
-            </a>
-          </h2>
-          <p class=""><%= project.description %></p>
+          </a>
+          <div class="card-content text-center p-3">
+            <h2 class="card-title">
+              <a href="">
+                <%= project.name.capitalize %>
+              </a>
+            </h2>
+            <p class=""><%= project.description %></p>
         </div>
-        <div class="card-read-more pt-2">
-          <div class="card-footer-bottom d-flex justify-content-around py-2">
+
+        <div class="card-read-more card-profile pt-2">
                 <% teammate_ids = project.teammates %>
                 <% teammate_ids.each do |teammate_id| %>
                 <% teammate = User.find_by(id: teammate_id) %>
+          <div class="card-footer-bottom d-flex justify-content-around py-2">
                <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
-            <% end %>
           </div>
+            <% end %>
         </div>
-          <hr>
-        
-        <div class="detail-footer">
-          <a href="">
-            <div class="p-font-info details">Details</div>
-          </a>
-        </div>
-
       </div>
-
+    <% end %>
   </div>
 </div>
-    <% end %>
+</div>
 <br>
 <br>
+
+

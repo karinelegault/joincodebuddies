@@ -1,0 +1,16 @@
+
+
+<div class="user-info d-flex my-3">
+  <a class="img-card-dashboard" href="">
+    <%= cl_image_tag @user.avatar_photo.key, height: 100, width: 100, crop: :fill %>
+  </a>
+  <div class="user-text py-2">
+    <div class="pop-info text-left ml-2">
+      <h2><%= @user.name.capitalize %></h2>
+      <p><%= @user.city %></p>
+      <p><%= @user.email %></p>
+      <p><%= @user.job_title %></p>
+      <p><%= @user.description %></p>
+    </div>
+  </div>
+</div>
