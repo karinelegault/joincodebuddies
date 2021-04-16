@@ -19,15 +19,15 @@ User.reset_pk_sequence
 UserSkill.reset_pk_sequence
 Skill.reset_pk_sequence
 
-filegad = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339200/jeff-tumale-5sYQ1uD4pHU-unsplash_sl7jog.jpg')
+filegad = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618536426/Screen_Shot_2021-04-15_at_2.23.54_PM_ilaajd.png')
 gad = User.create!(name: "gad", email: "gad@email.com", password: "123456", city: "Montreal", job_title: "Fullstack Developper")
 gad.avatar_photo.attach(io: filegad, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Gad created!"
-filekarine = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618067121/meritt-thomas-aoQ4DYZLE_E-unsplash_zope5c.jpg')
+filekarine = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618536529/Image_d_iOS_oid1kt.jpg')
 karine = User.create!(name: "karine", email: "karine@email.com", password: "123456", city: "Toronto", job_title: "Frontend Developper")
 karine.avatar_photo.attach(io: filekarine, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Karine created!"
-filepascal = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339186/elizeu-dias-2EGNqazbAMk-unsplash_h5tkk1.jpg')
+filepascal = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618537164/Prof_Pic_p9thyv.png')
 pascal = User.create!(name: "pascal", email: "pascal@email.com", password: "123456", city: "Ottawa", job_title: "Backend Developper")
 pascal.avatar_photo.attach(io: filepascal, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Pascal created!"

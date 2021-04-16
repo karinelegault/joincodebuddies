@@ -10,7 +10,7 @@
 
 
 
-<script>  
+<script>
     document.getElementByClassName("alert ").fadeOut(3000);
 </script>
 
@@ -26,13 +26,13 @@
         <div class="links-project d-flex">
           <%= button_to "Join", project_join_request_path(@project), :method => :get, :remote => true, class: "join mr-1", "data-toggle" => "modal",  "data-target" => "#exampleModal"  %>
         </div>
-        
 
-        
+
+
       </div>
 
 
-  
+
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -57,26 +57,18 @@
       <br>
       <p class="p-font"><%= @project.description %></p>
       <br><br>
-      
+
         <h3 class="h2-font members">Members</h3>
       <div class="members d-flex mt-3 ">
+          <% teammate_ids = @project.teammates %>
+          <% teammate_ids.each do |teammate_id| %>
+          <% teammate = User.find_by(id: teammate_id) %>
           <div class="avatar-all show-page-project ">
-            <img class="avatar" alt="avatar" src="https://images.unsplash.com/photo-1578774296842-c45e472b3028?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1521&q=80" />
-            <div class="avatar-text p-font">Amanda</div>
+            <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
+          <div class="avatar-text p-font"><%= teammate.name %></div>
             <%# <div class="p-font show-card">Montreal</div> %>
           </div>
-
-          <div class="avatar-all show-page-project">
-            <img class="avatar" alt="avatar" src="https://images.unsplash.com/photo-1582233479366-6d38bc390a08?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2561&q=80" />
-            <div class="avatar-text p-font">Charlie</div>
-            <%# <div class="p-font">Montreal</div> %>
-          </div>
-
-          <div class="avatar-all show-page-project">
-            <img class="avatar" alt="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1534&q=80" />
-            <div class="avatar-text p-font">Larry</div>
-            <%# <div class="p-font">Montreal</div> %>
-          </div>
+          <% end %>
       </div>
     </div>
    </div>
