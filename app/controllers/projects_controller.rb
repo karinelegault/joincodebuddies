@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
     def show
       @user = current_user
       @project = Project.find(params[:id])
+      @chatroom = @project.chatroom
     end
 
     def new
