@@ -27,7 +27,7 @@ filekarine = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v161853
 karine = User.create!(name: "karine", email: "karine@email.com", password: "123456", city: "Toronto", job_title: "Frontend Developper")
 karine.avatar_photo.attach(io: filekarine, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Karine created!"
-filepascal = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1615339186/elizeu-dias-2EGNqazbAMk-unsplash_h5tkk1.jpg')
+filepascal = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1618537164/Prof_Pic_p9thyv.png')
 pascal = User.create!(name: "pascal", email: "pascal@email.com", password: "123456", city: "Ottawa", job_title: "Backend Developper")
 pascal.avatar_photo.attach(io: filepascal, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "... Pascal created!"
