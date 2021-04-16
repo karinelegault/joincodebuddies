@@ -69,7 +69,11 @@
 
 .members-section {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.members-section img {
+  margin: 0 auto;
 }
 
 .links {
