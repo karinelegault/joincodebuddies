@@ -71,6 +71,13 @@
 
 }
 
+.my-profile {
+  display: grid;
+    grid-gap: 50px;
+    margin-left: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
 .project-side-profile {
   width: 75%;
   margin: 0 auto;
