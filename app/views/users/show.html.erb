@@ -56,7 +56,7 @@
             <p class=""><%= project.description %></p>
         </div>
 
-        <div class="card-read-more pt-2">
+        <div class="card-read-more card-profile pt-2">
                 <% teammate_ids = project.teammates %>
                 <% teammate_ids.each do |teammate_id| %>
                 <% teammate = User.find_by(id: teammate_id) %>
