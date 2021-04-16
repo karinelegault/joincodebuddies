@@ -22,5 +22,18 @@
   margin: 0 100px;
 }
 
+.modal-content {
+  background: $lightgreen;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 45px rgb(192, 255, 213)
+}
+
+.modal-header {
+  color: white;
+}
+
+.modal-body {
+  color: white;
+}
 // modal
 
