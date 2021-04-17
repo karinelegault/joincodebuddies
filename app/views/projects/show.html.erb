@@ -60,19 +60,15 @@
 
         <h3 class="h2-font members">Members</h3>
       <div class="members d-flex mt-3 ">
-          <div class="avatar-all show-page-project ">
-             <div class="avatar-text p-font"><%= @project.user.name %></div>
-            <%= cl_image_tag @project.user.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
           <% teammate_ids = @project.teammates %>
-        <% if teammate_ids.nil? == false  %>
           <% teammate_ids.each do |teammate_id| %>
           <% teammate = User.find_by(id: teammate_id) %>
+          <div class="avatar-all show-page-project ">
             <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
           <div class="avatar-text p-font"><%= teammate.name %></div>
             <%# <div class="p-font show-card">Montreal</div> %>
           </div>
           <% end %>
-        <% end %>
       </div>
     </div>
    </div>
