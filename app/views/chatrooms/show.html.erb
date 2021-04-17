@@ -13,7 +13,9 @@
           <% teammate_ids = @chatroom.project.teammates %>
           <% teammate_ids.each do |teammate_id| %>
           <% teammate = User.find_by(id: teammate_id) %>
+          <%= link_to user_path(teammate) do %>
           <%= cl_image_tag teammate.avatar_photo.key, height: 20, width: 20, crop: :scale, class: "avatar-menu"%>
+          <% end %>
           <div class="avatar-text p-font"><%= teammate.name %></div>
         <% end %>
       </div>

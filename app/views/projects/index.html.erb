@@ -96,7 +96,7 @@
           <a class="img-card" href="">
           <i id="fas" class="fas fa-heart"></i>
             <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
-         
+
           </a>
           <div class="card-content text-center p-3">
             <h2 class="card-title">
@@ -112,7 +112,9 @@
                 <% teammate_ids.each do |teammate_id| %>
                 <% teammate = User.find_by(id: teammate_id) %>
           <div class="card-footer-bottom d-flex justify-content-around py-2">
+            <%= link_to user_path(teammate) do %>
                <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
+            <% end %>
           </div>
             <% end %>
         </div>

@@ -59,7 +59,9 @@
                 <% teammate_ids.each do |teammate_id| %>
                 <% teammate = User.find_by(id: teammate_id) %>
           <div class="card-footer-bottom d-flex justify-content-around py-2">
+            <%= link_to user_path(teammate) do %>
                <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
+          <% end %>
           </div>
             <% end %>
         </div>
