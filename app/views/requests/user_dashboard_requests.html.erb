@@ -128,6 +128,9 @@
                     <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= request.status %>
                     </button>
+                  <% @project = request.project %>
+              <% @chatroom = @project.chatroom %>
+              <td><%= link_to "Chatroom", project_chatroom_path(@project, @chatroom), class:"p-font create-project" %></td>
 
                 </div>
               </td>
