@@ -88,42 +88,36 @@
 <br>
 
 
-<div class="container project-container bg-white p-5">
-  <div class="cards">
-       <% @finished_projects.each do |project| %>
-        <% @project = project %>
-    <div class="">
-      <div class="">
-        <div class="card">
+<div class="project-side-profile-index  bg-white p-5 ml-2 ">
+    <h2 class="h2-font mx-3">Projects</h2>
+      <div class="my-projects-container my-profile-index">
+        <% @projects.each do |project| %>
+        <div class="card project-finish">
           <a class="img-card" href="">
           <i id="fas" class="fas fa-heart"></i>
-            <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill %>
+          <a class="img-card" href="">
+            <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
           </a>
-              <% teammate_ids = @project.teammates %>
+          </a>
           <div class="card-content text-center p-3">
             <h2 class="card-title">
               <a href="">
-                <%= project.name %>
+                <%= project.name.capitalize %>
               </a>
             </h2>
-            <p class=""><%= project.description %> </p>
-              <% teammate_ids.each do |teammate_id| %>
-              <% teammate = User.find_by(id: teammate_id) %>
-                  <div class="user-content">
-                     <div class="avatar-all">
-                    <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
-                  </div>
-                </div>
-                <div class="avatar-text h2-font"style="font-size:20px">
-                    <p style="font-size:12px"><%= project.user.city %></p>
-                </div>
-            <% end %>
-          </div>
+            <p class=""><%= project.description %></p>
+        </div>
 
+        <div class="card-read-more card-profile pt-2">
+                <% teammate_ids = project.teammates %>
+                <% teammate_ids.each do |teammate_id| %>
+                <% teammate = User.find_by(id: teammate_id) %>
+          <div class="card-footer-bottom d-flex justify-content-around py-2">
+               <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
+          </div>
+            <% end %>
         </div>
       </div>
-    </div>
     <% end %>
-
   </div>
-</div>
+  </div>
