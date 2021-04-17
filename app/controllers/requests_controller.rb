@@ -63,7 +63,6 @@ class RequestsController < ApplicationController
     @incoming_requests = my_requests.flatten
     @outgoing_requests = Request.where(user_id: current_user.id)
     @my_projects = find_my_projects
-    raise
   end
 
   def find_my_projects
