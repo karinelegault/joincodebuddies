@@ -41,11 +41,9 @@
       <div class="my-projects-container my-profile">
         <% @projects.each do |project| %>
         <div class="card project-finish">
-          <a class="img-card" href="">
           <i id="fas" class="fas fa-heart"></i>
           <a class="img-card" href="">
             <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
-          </a>
           </a>
           <div class="card-content text-center p-3">
             <h2 class="card-title">
