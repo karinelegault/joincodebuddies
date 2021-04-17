@@ -49,5 +49,19 @@
   background: $yellow;
   border: none;
 }
+
+.cards-final {
+  min-height: 640px;
+}
+
+
+
+.my-profile-index {
+ margin: 0 auto;
+  display: grid;
+    grid-gap: 50px;
+    margin-left: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 // modal
 
