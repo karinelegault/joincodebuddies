@@ -26,6 +26,8 @@ class ProjectsController < ApplicationController
       @project = Project.new(project_params)
       @project.user = current_user
       @project.status = "idea"
+      @project.teammates = []
+      @project.teammates << @project.user.id
       @chatroom = Chatroom.new
       @chatroom.user = current_user
       @chatroom.project = @project
@@ -38,7 +40,7 @@ class ProjectsController < ApplicationController
       end
     end
 
-    
+
 
     def edit
       @project = Project.find(params[:id])
@@ -58,7 +60,7 @@ class ProjectsController < ApplicationController
       @project.status = "finished"
       @project.save
     end
-    
+
     def idea_status
       @project = Project.find(params[:id])
       @project.status = "idea"
@@ -68,6 +70,6 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-      params.require(:project).permit(:name, :description, :chatroom_link, :photo, :status)
+      params.require(:project).permit(:name, :description, :chatroom_link, :photo, :status, :teammates)
     end
 end
