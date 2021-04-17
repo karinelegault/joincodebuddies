@@ -64,7 +64,9 @@
           <% teammate_ids.each do |teammate_id| %>
           <% teammate = User.find_by(id: teammate_id) %>
           <div class="avatar-all show-page-project ">
+            <%= link_to user_path(teammate) do %>
             <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
+            <% end %>
           <div class="avatar-text p-font"><%= teammate.name %></div>
             <%# <div class="p-font show-card">Montreal</div> %>
           </div>

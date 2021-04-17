@@ -38,7 +38,9 @@
       <% @users.each do |user| %>
       <div class="avatar-all">
         <a class="" href="">
+        <%= link_to user_path(user) do %>
         <%= cl_image_tag user.avatar_photo.key, height: 50, width: 50, crop: :fill, class: "avatar" %>
+        <% end %>
         </a>
         <div class="avatar-text h2-font"><%= user.name.capitalize %></div>
         <div class="p-font"><%= user.city %></div>

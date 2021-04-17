@@ -13,7 +13,9 @@
           <% teammate_ids = @chatroom.project.teammates %>
           <% teammate_ids.each do |teammate_id| %>
           <% teammate = User.find_by(id: teammate_id) %>
+          <%= link_to user_path(teammate) do %>
           <%= cl_image_tag teammate.avatar_photo.key, height: 20, width: 20, crop: :scale, class: "avatar-menu"%>
+          <% end %>
           <div class="avatar-text p-font"><%= teammate.name %></div>
         <% end %>
       </div>
@@ -57,7 +59,7 @@
 
   </div>
   <div class="project-column sides-right">
-    <textarea name="" id="textarea" cols="30" rows="10" placeholder="Tips for Starting a project:"></textarea>
+    <textarea name="" id="textarea" cols="30" rows="10" placeholder="Add notes for your team here:"></textarea>
     <button class="btn btn-dark text-align-center" id="callbutton">Video Chat</button>
   </div>
 </div>
