@@ -51,7 +51,7 @@
           <% @incoming_requests.each do |request| %>
           <tr>
             <%# <td class="img-project"><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%>
-            <td><%= cl_image_tag(request.user.avatar_photo.key, class: "avatar avatar-dashboard", height: 40, width: 40, crop: :fill) %><%= request.user.name %></td>
+            <td><%= cl_image_tag(request.user.avatar_photo.key, class: "avatar avatar-dashboard", height: 40, width: 40, crop: :fill) %><%= request.user.name.capitalize %></td>
             <td><p class="p-font"><%= request.project.name %></p></td>
             <td>
             <% @project = request.project %>
@@ -98,7 +98,7 @@
         <% end %>
       </table>
     </div>
-        <h2 class="h2-font my-3">My Projects</h2>
+        <h2 class="h2-font my-3">Projects I want to work on</h2>
     <div class="second-section">
       <% if !@outgoing_requests.nil? %>
         <table class="my-3">

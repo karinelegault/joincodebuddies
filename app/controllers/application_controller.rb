@@ -8,4 +8,5 @@ class ApplicationController < ActionController::Base
   def default_url_options
     { host: ENV["joincodebuddies.com"] || "localhost:3000" }
   end
+
 end
