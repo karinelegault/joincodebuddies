@@ -11,7 +11,7 @@ class UsersController < ApplicationController
                 lat: user.latitude,
                 lng: user.longitude,
                 infoWindow: render_to_string(partial: "info_window", locals: { user: user })
-                
+
               }
           end
         end
@@ -22,6 +22,20 @@ class UsersController < ApplicationController
       @projects = Project.where(user_id: @user.id)
         params
         @user = User.find(params[:id])
+      @projects = find_my_projects
+    end
+
+    def find_my_projects
+      my_projects = []
+      Project.all.each do | project|
+        if project.teammates != nil
+          if project.teammates.include? current_user.id
+            my_projects << project
+          end
+        end
+      end
+      my_projects << Project.where(user_id: current_user.id)
+      return my_projects.flatten
     end
 end
 

@@ -8,7 +8,7 @@
   background-color: white;
   max-width: 25%;
  position: relative;
- border-radius: 21px 0px 0px 21px;
+//  border-radius: 21px 0px 0px 21px;
 }
 
 .sides-right {
@@ -16,7 +16,7 @@
   background-color: white;
   max-width: 25%;
  position: relative;
- border-radius: 0px 21px 21px 0px;
+//  border-radius: 0px 21px 21px 0px;
 }
 
 .chat-section {
@@ -35,14 +35,14 @@
 }
 
 .project-column {
-  box-shadow: 0 0 15px rgba(0, 0, 1, 0.233);
+  // box-shadow: 0 0 15px rgba(0, 0, 1, 0.233);
 }
 
 .chatroom-card img {
   width: 250px;
   max-height: 150px;
   object-fit: cover;
-  border-radius: 12px 12px 0 0;
+  // border-radius: 12px 12px 0 0;
 
 }
 
@@ -50,8 +50,8 @@
   max-height: 450px;
   position: relative;
   margin: 13px 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 1, 0.233);
+  // border-radius: 12px;
+  box-shadow: 0 0 5px rgba(0, 0, 1, 0.233);
 }
 
 .chatroom-card p {
@@ -131,10 +131,12 @@
 #textarea {
   width: calc(100% - 30px);
   margin: 20px;
-  border-radius: 15px;
-  border: 1px solid lightgray;
+  // border-radius: 15px;
+  border: 1px solid #fff7ab;
   padding: 6px;
   text-decoration: underline;
+  background: #FFF8BB;
+  height: 550px;
 
 }
 
