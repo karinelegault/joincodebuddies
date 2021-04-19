@@ -105,7 +105,6 @@
           <tr>
             <%# <th>Project photo</th> %>
             <th>Project name</th>
-            <th>Approved Projects</th>
             <th>Status</th>
           </tr>
 
@@ -113,9 +112,7 @@
             <tr class="table-row-dashboard">
               <%# <td><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%>
               <td><p class="p-font"><%= request.project.name %></p></td>
-              <td><p><%= request.status %></p></td>
               <td>
-
                 <div class="dropdown">
                   <% button_color =  case request.status %>
                   <% when "accepted" %>
