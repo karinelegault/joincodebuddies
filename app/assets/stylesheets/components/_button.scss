@@ -90,3 +90,16 @@
     left: 216px;
     top: 283px;
 }
+
+.dashboard-button {
+  width: 200px;
+  height: 40px;
+  color: $white;
+  background-color: $darkgreen;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
