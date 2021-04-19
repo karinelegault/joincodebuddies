@@ -1,6 +1,7 @@
+
 module MetaTagsHelper
   def meta_title
-    content_for?(:meta_title) ? content_for(:meta_title) : DEFAULT_META["JoinCodeBuddies"]
+    content_for?(:meta_title) ? content_for(:meta_title) : DEFAULT_META["JoinCodeBuddies - Join our community, Code, build, learn"]
   end
 
   def meta_description
@@ -8,8 +9,8 @@ module MetaTagsHelper
   end
 
   def meta_image
-    meta_image = (content_for?(:meta_image) ? content_for(:meta_image) : DEFAULT_META["joincodebuddies_meta.jpg"])
+    meta_image = (content_for?(:meta_image) ? content_for(:meta_image) : DEFAULT_META["joincodebuddies-share.jpg"])
     # little twist to make it work equally with an asset or a url
-    meta_image.starts_with?("https://res.cloudinary.com/drlbljn6y/image/upload/v1618531266/joincodebuddies_meta_d5i4lh.jpg") ? meta_image : image_url(meta_image)
+    # meta_image.starts_with?("https://res.cloudinary.com/drlbljn6y/image/upload/v1618843746/joincodebuddies-share_k0c8sj.jpg") ? meta_image : image_url(meta_image)
   end
 end

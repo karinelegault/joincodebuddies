@@ -44,9 +44,9 @@
       <table>
         <tr>
           <%# <th>Project photo</th> %>
-          <th>Requested by:</th>
+          <th>Requested by</th>
           <th>Project name</th>
-          <th>Status</th>
+          <th>Request Status</th>
         </tr>
           <% @incoming_requests.each do |request| %>
           <tr>
@@ -73,26 +73,6 @@
                   <button class="dropdown-item "><%= link_to "Decline", deny_requests_path(request), method: :post, remote: true, class: "dropdown-item "%></button>
               </div>
             </td>
-            <td>
-             <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom), class: "create-project "  %>
-            </td>
-            <td>
-              <div class="dropdown">
-                <% button_status_color =  case @project.status %>
-                <% when "finished" %>
-                  <% "btn-success" %>
-                <% when "idea" %>
-                  <% "btn-warning" %>
-                <% end %>
-                  <button class="btn <%= button_status_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <%= @project.status %>
-                  </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <button class="dropdown-item "><%= link_to "Mark as finished", finished_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
-                  <button class="dropdown-item "><%= link_to "Mark as idea", idea_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
-                </div>
-              </div>
-            </td>
           </tr>
         <% end %>
         <% end %>
@@ -105,7 +85,13 @@
           <tr>
             <%# <th>Project photo</th> %>
             <th>Project name</th>
+<<<<<<< HEAD
             <th>Status</th>
+=======
+            <th>Requests Status</th>
+            <th>Project status</th>
+            <th>Room</th>
+>>>>>>> f0cf6c0e9a479120b547118fc2a7537f25bcf316
           </tr>
 
             <% @outgoing_requests.each do |request| %>
@@ -127,10 +113,31 @@
                     </button>
                   <% @project = request.project %>
               <% @chatroom = @project.chatroom %>
-              <td><%= link_to "Chatroom", project_chatroom_path(@project, @chatroom), class:"p-font create-project" %></td>
+              <td>
+              <div class="dropdown">
+                <% button_status_color =  case @project.status %>
+                <% when "finished" %>
+                  <% "btn-success" %>
+                <% when "idea" %>
+                  <% "btn-warning" %>
+                <% end %>
+                  <button class="btn <%= button_status_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= @project.status %>
+                  </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <button class="dropdown-item "><%= link_to "Mark as finished", finished_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
+                  <button class="dropdown-item "><%= link_to "Mark as idea", idea_status_path(@project), method: :patch,  class: "dropdown-item " %></button>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <% if request.status = "accepted" %>
+              <%= link_to "Room", project_chatroom_path(@project, @chatroom), class:"p-font room" %></td>
+              <% end %>
 
                 </div>
-              </td>
+            </td>
             </tr>
           <% end %>
         </table>
