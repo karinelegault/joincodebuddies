@@ -44,9 +44,9 @@
       <table>
         <tr>
           <%# <th>Project photo</th> %>
-          <th>Requested by:</th>
+          <th>Requested by</th>
           <th>Project name</th>
-          <th>Status</th>
+          <th>Request Status</th>
         </tr>
           <% @incoming_requests.each do |request| %>
           <tr>
@@ -73,10 +73,43 @@
                   <button class="dropdown-item "><%= link_to "Decline", deny_requests_path(request), method: :post, remote: true, class: "dropdown-item "%></button>
               </div>
             </td>
-            <td>
-             <%= link_to "Go to Chatroom", project_chatroom_path(@project, @chatroom), class: "create-project "  %>
-            </td>
-            <td>
+          </tr>
+        <% end %>
+        <% end %>
+      </table>
+    </div>
+        <h2 class="h2-font my-3">Projects I want to work on</h2>
+    <div class="second-section">
+      <% if !@outgoing_requests.nil? %>
+        <table class="my-3">
+          <tr>
+            <%# <th>Project photo</th> %>
+            <th>Project name</th>
+            <th>Requests Status</th>
+            <th>Project status</th>
+            <th>Room</th>
+          </tr>
+
+            <% @outgoing_requests.each do |request| %>
+            <tr class="table-row-dashboard">
+              <%# <td><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%>
+              <td><p class="p-font"><%= request.project.name %></p></td>
+              <td>
+                <div class="dropdown">
+                  <% button_color =  case request.status %>
+                  <% when "accepted" %>
+                    <% "btn-success" %>
+                  <% when "declined" %>
+                    <% "btn-danger" %>
+                  <% when "pending" %>
+                    <% "btn-secondary" %>
+                  <% end %>
+                    <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= request.status %>
+                    </button>
+                  <% @project = request.project %>
+              <% @chatroom = @project.chatroom %>
+              <td>
               <div class="dropdown">
                 <% button_status_color =  case @project.status %>
                 <% when "finished" %>
@@ -93,47 +126,14 @@
                 </div>
               </div>
             </td>
-          </tr>
-        <% end %>
-        <% end %>
-      </table>
-    </div>
-        <h2 class="h2-font my-3">Projects I want to work on</h2>
-    <div class="second-section">
-      <% if !@outgoing_requests.nil? %>
-        <table class="my-3">
-          <tr>
-            <%# <th>Project photo</th> %>
-            <th>Project name</th>
-            <th>Approved Projects</th>
-            <th>Status</th>
-          </tr>
 
-            <% @outgoing_requests.each do |request| %>
-            <tr class="table-row-dashboard">
-              <%# <td><%= cl_image_tag(request.project.photo.key, height: 80, width: 80, crop: :fill)%>
-              <td><p class="p-font"><%= request.project.name %></p></td>
-              <td><p><%= request.status %></p></td>
-              <td>
-
-                <div class="dropdown">
-                  <% button_color =  case request.status %>
-                  <% when "accepted" %>
-                    <% "btn-success" %>
-                  <% when "declined" %>
-                    <% "btn-danger" %>
-                  <% when "pending" %>
-                    <% "btn-secondary" %>
-                  <% end %>
-                    <button class="btn <%= button_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= request.status %>
-                    </button>
-                  <% @project = request.project %>
-              <% @chatroom = @project.chatroom %>
-              <td><%= link_to "Chatroom", project_chatroom_path(@project, @chatroom), class:"p-font create-project" %></td>
+            <td>
+              <% if request.status = "accepted" %>
+              <%= link_to "Room", project_chatroom_path(@project, @chatroom), class:"p-font room" %></td>
+              <% end %>
 
                 </div>
-              </td>
+            </td>
             </tr>
           <% end %>
         </table>
