@@ -9,7 +9,7 @@ module MetaTagsHelper
   end
 
   def meta_image
-    meta_image = (content_for?(:meta_image) ? content_for(:meta_image) : DEFAULT_META["app/assets/images/joincodebuddies-share.jpg"])
+    meta_image = (content_for?(:meta_image) ? content_for(:meta_image) : DEFAULT_META["assets/images/joincodebuddies-share.jpg"])
     # little twist to make it work equally with an asset or a url
     # meta_image.starts_with?("https://res.cloudinary.com/drlbljn6y/image/upload/v1618843746/joincodebuddies-share_k0c8sj.jpg") ? meta_image : image_url(meta_image)
   end
