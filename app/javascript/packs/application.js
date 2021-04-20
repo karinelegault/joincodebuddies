@@ -13,6 +13,8 @@ import { initChatroomCable } from '../channels/chatroom_channel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initVideoCall } from "../video_call/daily";
 import {reloadFunction} from "../reload_button/button_reload";
+import {scrollToFunction} from "../reload_button/button_reload"
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
@@ -27,6 +29,7 @@ document.addEventListener('turbolinks:load', () => {
 
 document.addEventListener("turbolinks:load", () => {
     initChatroomCable()
+    scrollToFunction()
     // reloadFunction()
     // Call daily code in there
     initVideoCall()
