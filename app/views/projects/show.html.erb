@@ -47,8 +47,11 @@
               <h3>Success!</h3>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+              <div class="links-project d-flex">
+                <div class="p-font">Follow the status for your request in your dashboard</div>
+                <%= link_to "My Dashboard", user_dashboard_requests_path, class: "dashboard-button" %>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -67,7 +70,7 @@
             <%= link_to user_path(teammate) do %>
             <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
             <% end %>
-          <div class="avatar-text p-font"><%= teammate.name %></div>
+          <div class="avatar-text p-font"><%= teammate.name.capitalize %></div>
             <%# <div class="p-font show-card">Montreal</div> %>
           </div>
           <% end %>
