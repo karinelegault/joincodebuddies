@@ -129,10 +129,10 @@
             </td>
 
             <td>
-              <% if request.status = "accepted" %>
+              <% if request.status == "accepted" %>
               <%= link_to "Room", project_chatroom_path(@project, @chatroom), class:"p-font room" %></td>
-              <% elsif request.status = "pending"%>
-              <div>No link</div>
+              <% elsif request.status == "pending"%>
+              <div></div>
               <% end %>
 
                 </div>
