@@ -29,9 +29,9 @@ document.addEventListener('turbolinks:load', () => {
 
 document.addEventListener("turbolinks:load", () => {
     initChatroomCable()
-    scrollToFunction()
     // reloadFunction()
     // Call daily code in there
     initVideoCall()
+    scrollToFunction()
 });
 
