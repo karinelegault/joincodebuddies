@@ -114,9 +114,9 @@
               <div class="dropdown">
                 <% button_status_color =  case @project.status %>
                 <% when "finished" %>
-                  <% "btn-success" %>
+                  <div class="finished-button"><% "btn-success" %></div>
                 <% when "idea" %>
-                  <% "btn-warning" %>
+                  <div class="idea-button"><% "btn-warning" %></div>
                 <% end %>
                   <button class="btn <%= button_status_color %> dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <%= @project.status %>
