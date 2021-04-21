@@ -34,6 +34,7 @@
 <div class="container project-container bg-white p-5">
   <div class="cards">
     <% @projects.each do |project| %>
+    <% if project.status == "idea" %>
     <div class="">
       <div class="">
         <%= link_to project_path(project) do %>
@@ -58,6 +59,7 @@
         </div>
       </div>
     </div>
+    <% end %>
     <% end %>
 
   </div>
@@ -93,6 +95,7 @@
     <h2 class="h2-font mx-3">Projects</h2>
       <div class="my-projects-container my-profile-index">
         <% @projects.each do |project| %>
+        <% if project.status == "finished" %>
         <div class="card project-finish">
           <a class="img-card" href="">
             <%= link_to project_path(project) do %>
@@ -122,6 +125,7 @@
             <% end %>
         </div>
       </div>
+      <% end %>
       <% end %>
     <% end %>
   </div>
