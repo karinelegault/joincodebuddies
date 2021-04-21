@@ -41,17 +41,19 @@
       <div class="my-projects-container my-profile">
         <% @projects.each do |project| %>
         <div class="card project-finish">
+          <%= link_to project_path(project) do %>
           <i id="fas" class="fas fa-heart"></i>
-          <a class="img-card" href="">
+          <div class="img-card">
             <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
-          </a>
+          </div>
           <div class="card-content text-center p-3">
             <h2 class="card-title">
-              <a href="">
+              <div>
                 <%= project.name.capitalize %>
-              </a>
+              </div>
             </h2>
             <p class=""><%= project.description %></p>
+            <% end %>
         </div>
 
         <div class="card-read-more card-profile pt-2">
