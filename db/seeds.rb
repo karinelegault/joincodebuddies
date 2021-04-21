@@ -114,30 +114,65 @@ users.each do |user|
 end
 
 puts "... Creating projects"
+
 file1 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1617665374/firmbee-com-gcsNOsPEXfs-unsplash_jpetwl.jpg')
-project1 = Project.create!(user_id: 1, name: "Notes inc", description: "I would like to create a software to take notes during meeting. The idea would be the have visual elements to make it visible at all time.", chatroom_link: "www.google.com", teammates: [2,3], status: "finished" )
+project1 = Project.create!(user_id: 1, name: "Notes inc", description: "I would like to create a software to take notes during meeting. The idea would be the have visual elements to make it visible at all time.", chatroom_link: "www.google.com", teammates: [1,2], status: "finished" )
 project1.photo.attach(io: file1, filename: 'nes.jpg', content_type: 'image/jpg')
 chatroom = Chatroom.create!(user_id: 1, project_id: 1, name: "mychatroom")
+
 file2 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1617665518/sigmund-4UGmm3WRUoQ-unsplash_yxbehu.jpg')
-project2 = Project.create!(user_id: 1, name: "Formation hub for designers", description: "The idea would be to create a hub in order to display formation available for designer towards different rooms.", chatroom_link: "www.google.com", teammates: [2,3], status: "finished" )
+project2 = Project.create!(user_id: 1, name: "Formation hub for designers", description: "The idea would be to create a hub in order to display formation available for designer towards different rooms.", chatroom_link: "www.google.com", teammates: [1,5], status: "finished" )
 project2.photo.attach(io: file2, filename: 'nes.jpg', content_type: 'image/jpg')
 chatroom = Chatroom.create!(user_id: 1, project_id: 2, name: "mychatroom")
+
 file3 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1617665838/taras-shypka-iFSvn82XfGo-unsplash_n86qyz.jpg')
-project3 = Project.create!(user_id: 1, name: "Devices tester", description: "I would like to create an amazing software to help QA experts testing products on as many devices at the same time.", chatroom_link: "www.google.com", teammates: [1,2], status: "idea" )
+project3 = Project.create!(user_id: 1, name: "Devices tester", description: "I would like to create an amazing software to help QA experts testing products on as many devices at the same time.", chatroom_link: "www.google.com", teammates: [1,2,6], status: "idea" )
 project3.photo.attach(io: file3, filename: 'nes.jpg', content_type: 'image/png')
 chatroom = Chatroom.create!(user_id: 1, project_id: 3, name: "mychatroom")
-
 
 file4 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1617667820/leohoho-2iisCGzu_mw-unsplash_v0iw7f.jpg')
 project4 = Project.create!(user_id: 2, name: "Masks finder", description: "Create a software to help health workers find masks supplies easier.", chatroom_link: "www.google.com", teammates: [1,2], status: "idea" )
 project4.photo.attach(io: file4, filename: 'nes.jpg', content_type: 'image/png')
 chatroom = Chatroom.create!(user_id: 2, project_id: 4, name: "mychatroom")
+
 file5 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1617751179/igor-miske-JVSgcV8_vb4-unsplash_tavhlj.jpg')
-project5 = Project.create!(user_id: 2, name: "Salad Masta", description: "I would like to work on a web site that allows the user to shuffle through ingredients to create the best salad.", chatroom_link: "www.google.com", teammates: [2,3], status: "idea" )
+project5 = Project.create!(user_id: 2, name: "Salad Masta", description: "I would like to work on a web site that allows the user to shuffle through ingredients to create the best salad.", chatroom_link: "www.google.com", teammates: [2,7], status: "idea" )
 project5.photo.attach(io: file5, filename: 'nes.jpg', content_type: 'image/png')
 chatroom = Chatroom.create!(user_id: 2, project_id: 5, name: "mychatroom")
+
 file6 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1617751192/pankaj-patel-Ylk5n_nd9dA-unsplash_hwjwsg.jpg')
-project6 = Project.create!(user_id: 3, name: "Blocks build Website", description: "Simple website for my friend who build things with blocks.", chatroom_link: "www.google.com", teammates: [2,3], status: "idea" )
+project6 = Project.create!(user_id: 2, name: "Blocks build Website", description: "Simple website for my friend who build things with blocks.", chatroom_link: "www.google.com", teammates: [2,8], status: "idea" )
 project6.photo.attach(io: file6, filename: 'nes.jpg', content_type: 'image/png')
-chatroom = Chatroom.create!(user_id: 3, project_id: 6, name: "mychatroom")
+chatroom = Chatroom.create!(user_id: 2, project_id: 6, name: "mychatroom")
+
+file7 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1619018268/stephane-yaich-pUV1phrNReo-unsplash_uj65uo.jpg')
+project7 = Project.create!(user_id: 1, name: "Flamingo salsa", description: "Would like to create a website displaying flamingo dancing in order to practice amazing animations.", chatroom_link: "www.google.com", teammates: [1,4], status: "idea" )
+project7.photo.attach(io: file7, filename: 'nes.jpg', content_type: 'image/png')
+chatroom = Chatroom.create!(user_id: 1, project_id: 7, name: "mychatroom")
+
+file8 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1619018409/luca-bravo-ESkw2ayO2As-unsplash_z74tju.jpg')
+project8 = Project.create!(user_id: 2, name: "Forest escape", description: "I would to create an app that recreate the zen feeling you have in a middle of a forest", chatroom_link: "www.google.com", teammates: [1,2,9], status: "idea" )
+project8.photo.attach(io: file8, filename: 'nes.jpg', content_type: 'image/png')
+chatroom = Chatroom.create!(user_id: 2, project_id: 8, name: "mychatroom")
+
+file9 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1619019248/call-me-fred-STV98EbRy7w-unsplash_wpxz5m.jpg')
+project9 = Project.create!(user_id: 2, name: "Just for fun", description: "I would like to have fun creating a funny project that would make people smile", chatroom_link: "www.google.com", teammates: [2,10], status: "finished" )
+project9.photo.attach(io: file9, filename: 'nes.jpg', content_type: 'image/png')
+chatroom = Chatroom.create!(user_id: 2, project_id: 9, name: "mychatroom")
+
+file10 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1619019256/dominik-vanyi-5Fxuo7x-eyg-unsplash_yxdaca.jpg')
+project10 = Project.create!(user_id: 2, name: "Musician on the go", description: "App to find musician performing outdoor or in public places", chatroom_link: "www.google.com", teammates: [2,11,12], status: "finished" )
+project10.photo.attach(io: file10, filename: 'nes.jpg', content_type: 'image/png')
+chatroom = Chatroom.create!(user_id: 2, project_id: 10, name: "mychatroom")
+
+file11 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1619019264/elena-cordery-RLlcbkemwnw-unsplash_1_xnju4q.jpg')
+project11 = Project.create!(user_id: 2, name: "Fruits finder", description: "Website to help people know when their fruits are ready to be eaten", chatroom_link: "www.google.com", teammates: [2,7], status: "finished" )
+project11.photo.attach(io: file11, filename: 'nes.jpg', content_type: 'image/png')
+chatroom = Chatroom.create!(user_id: 2, project_id: 11, name: "mychatroom")
+
+file12 = URI.open('https://res.cloudinary.com/drlbljn6y/image/upload/v1619019284/mikael-kristenson-EXuKQaf3Ei8-unsplash_dnjchl.jpg')
+project12 = Project.create!(user_id: 2, name: "Funnabanana", description: "Funny website because why not, lets practice amazing animations and have fun", chatroom_link: "www.google.com", teammates: [2,7], status: "finished" )
+project12.photo.attach(io: file12, filename: 'nes.jpg', content_type: 'image/png')
+chatroom = Chatroom.create!(user_id: 2, project_id: 12, name: "mychatroom")
+
 puts "Projects Created"
