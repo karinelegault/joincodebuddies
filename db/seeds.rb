@@ -178,3 +178,6 @@ project12.photo.attach(io: file12, filename: 'nes.jpg', content_type: 'image/png
 chatroom = Chatroom.create!(user_id: 2, project_id: 12, name: "mychatroom")
 
 puts "Projects Created"
+
+gad_request = Request.create!(user_id: 1, project_id: 8, status: "accepted" )
+puts "Gad's request created for Forest Escape"
