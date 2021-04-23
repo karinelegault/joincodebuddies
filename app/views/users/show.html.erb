@@ -23,7 +23,7 @@
       <br>
       <h3>My Skills</h3>
         <div class="grid-dashboard">
-          <% @user.skills.to_a.each do |user_skill| %>
+          <% @user.skills.to_a.uniq.each do |user_skill| %>
           <p class="p-font" id="skills-dashboard"><%= user_skill.name %></p>
           <% end %>
         </div>

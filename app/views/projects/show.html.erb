@@ -63,8 +63,7 @@
 
         <h3 class="h2-font members">Members</h3>
       <div class="members d-flex mt-3 ">
-          <% teammate_ids = @project.teammates %>
-          <% teammate_ids.each do |teammate_id| %>
+          <% @project_teammates_ids.each do |teammate_id| %>
           <% teammate = User.find_by(id: teammate_id) %>
           <div class="avatar-all show-page-project ">
             <%= link_to user_path(teammate) do %>
