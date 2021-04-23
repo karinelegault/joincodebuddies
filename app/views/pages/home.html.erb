@@ -101,44 +101,42 @@
 <br>
 
 <div class="project-side-profile-index  bg-white p-5 ml-2 ">
-      <div class="my-projects-container my-profile-index">
-        <% @projects.each do |project| %>
-        <% if project.status == "finished" %>
+  <div class="my-projects-container my-profile-index">
+    <% @projects.each do |project| %>
+      <% if project.status == "finished" %>
         <div class="card project-finish">
           <%= link_to project_path(project) do %>
-          <div class="img-card">
-          <i id="fas" class="fas fa-heart"></i>
-            <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
-
-          </div>
-          <div class="card-content text-center p-3">
-            <h2 class="card-title">
-              <div>
-                <%= project.name.capitalize %>
-              </div>
-            </h2>
-            <p class=""><%= project.description %></p>
-        </div>
-
-        <div class="card-read-more card-profile pt-2">
-                <% teammate_ids = project.teammates %>
-                <% teammate_ids.each do |teammate_id| %>
-                <% teammate = User.find_by(id: teammate_id) %>
-          <div class="card-footer-bottom d-flex justify-content-around py-2">
-            <%= link_to user_path(teammate) do %>
-               <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
-              <div class="avatar-text h2-font"><%= teammate.name.capitalize %></div>
-              <% end %>
-          </div>
+            <div class="img-card">
+              <i id="fas" class="fas fa-heart"></i>
+              <%= cl_image_tag project.photo.key, height: 300, width: 400, crop: :fill, class: "card-img" %>
+            </div>
+            <div class="card-content text-center p-3">
+              <h2 class="card-title">
+                  <%= project.name.capitalize %>
+              </h2>
+              <p class=""><%= project.description %></p>
+            </div>
             <% end %>
+          <div class="card-read-more card-profile pt-2">
+            <% teammate_ids = project.teammates %>
+            <% teammate_ids.each do |teammate_id| %>
+              <% teammate = User.find_by(id: teammate_id) %>
+              <div class="card-footer-bottom d-flex justify-content-around py-2">
+                <%= link_to user_path(teammate) do %>
+                <div>
+                  <%= cl_image_tag teammate.avatar_photo.key, height: 35, width: 35, crop: :scale, class: "avatar-menu"%>
+                  <div class="avatar-text h2-font"><%= teammate.name.capitalize %>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
-
-      </div>
       <% end %>
-      <% end %>
-    <% end %>
 
-  </div>
+  <% end %>
+</div>
 
 
 

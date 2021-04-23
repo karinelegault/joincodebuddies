@@ -15,6 +15,8 @@ class ProjectsController < ApplicationController
       @user = current_user
       @project = Project.find(params[:id])
       @chatroom = @project.chatroom
+      @project_teammates_ids = @project.teammates
+      @project_teammates_ids = @project_teammates_ids.uniq
     end
 
     def new
@@ -27,7 +29,9 @@ class ProjectsController < ApplicationController
       @project.user = current_user
       @project.status = "idea"
       @project.teammates = []
-      @project.teammates << @project.user.id
+      unless @project.teammates.include? @project.user.id
+        @project.teammates << @project.user.id
+      end
       @chatroom = Chatroom.new
       @chatroom.user = current_user
       @chatroom.project = @project
