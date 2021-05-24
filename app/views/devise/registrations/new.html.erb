@@ -11,6 +11,12 @@
       <p>Already have an account? <span><%= link_to "Login", new_user_session_path%></span></p>
     </div>
     <div class="form-row">
+       <div class="col-12">
+        <%= f.input_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "name" %>
+        <%= f.input_field :username, autofocus: true, autocomplete: "username", class: "form-control", placeholder: "username" %>
+      </div> <div class="col-12">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "email" %>
+      </div>
       <div class="col-12">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "email" %>
       </div>
