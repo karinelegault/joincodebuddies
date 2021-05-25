@@ -1,13 +1,6 @@
 class UsersController < ApplicationController
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    @user.save
-  end
+ 
 
   def index
     @user = current_user
@@ -48,12 +41,12 @@ class UsersController < ApplicationController
       return my_projects.flatten
     end
 
-
     private
 
     def user_params
       params.require(:user).permit(:photo, :username, :name, :email, :password)
     end
+   
 end
 
 
