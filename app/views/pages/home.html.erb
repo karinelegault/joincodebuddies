@@ -2,7 +2,7 @@
 <% if user_signed_in? %>
 <div class="banner-home">
   <div class="banner-text">
-    <div class="h2-font-home">Welcome <span class="h2-font-home banner-green-text"></span><%= @user.name.capitalize %></div>
+    <div class="h2-font-home">Welcome <span class="h2-font-home banner-green-text"></span><%= @first_name.capitalize %></div>
     <br>
     <%= link_to "Create Project", new_project_path, class: "p-font create-project" %>
   </div>
