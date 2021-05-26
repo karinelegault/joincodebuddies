@@ -26,6 +26,7 @@ class UsersController < ApplicationController
         params
         @user = User.find(params[:id])
       @projects = find_my_projects
+
     end
 
     def find_my_projects
